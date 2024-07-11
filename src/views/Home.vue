@@ -34,16 +34,17 @@
   </el-row>
   <el-row>
     <el-col style="justify-content: center">
-      <el-carousel :interval="4000" type="card">
+      <el-carousel
+        :motion-blur="true"
+        :interval="4000"
+        type="card"
+        style="height: 100%"
+      >
         <el-carousel-item
           v-for="project in props.projects"
           :key="project.label"
         >
-          <img
-            style="object-fit: contain; height: 100%; width: 100%"
-            :src="project.img"
-            lazy
-          />
+          <img class="img_carousel" :src="project.img" lazy />
         </el-carousel-item>
       </el-carousel>
     </el-col>
@@ -57,6 +58,12 @@ const props = defineProps({
 </script>
 
 <style>
+.img_carousel {
+  object-fit: contain;
+  height: 100%;
+  width: 70%;
+}
+
 .about {
   text-align: justify;
   display: flex;
