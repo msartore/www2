@@ -8,9 +8,11 @@
           @navigate-to="navigateTo"
         />
       </el-header>
-      <el-container style="max-width: 100em">
-        <el-main>
-          <RouterView :projects="pages[0].items" />
+      <el-container>
+        <el-main class="main-container">
+          <div style="width: 70%">
+            <RouterView :projects="pages[0].items" />
+          </div>
         </el-main>
         <el-footer>Footer</el-footer>
       </el-container>
@@ -34,19 +36,25 @@ const pages = ref([
         label: "ATA-GUI",
         path: "/projects/ata-gui",
         index: "0",
-        img: "/src/assets/banner3.png",
+        img: "/src/assets/banner1.png",
       },
       {
         label: "Ares",
         path: "/projects/ares",
         index: "1",
-        img: "/src/assets/banner3.png",
+        img: "/src/assets/banner4.png",
       },
       {
         label: "ATA",
         path: "/projects/ata",
         index: "2",
         img: "/src/assets/banner3.png",
+      },
+      {
+        label: "Material Gallery",
+        path: "/projects/material-gallery",
+        index: "3",
+        img: "/src/assets/banner2.png",
       },
     ],
   },
@@ -77,6 +85,7 @@ function navigateTo(index) {
 }
 
 .main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
+  display: flex;
+  justify-content: center;
 }
 </style>

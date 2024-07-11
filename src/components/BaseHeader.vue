@@ -10,20 +10,18 @@
       <img style="width: 30px" src="../assets/favicon.png" alt="Element logo" />
     </el-menu-item>
     <div class="flex-grow" />
-    <div v-for="page in props.pages">
-      <el-menu-item v-if="page.items == undefined" :index="page.index">
-        {{ page.label }}
+    <el-sub-menu v-for="page in ps_i" :index="page.index">
+      <template #title>{{ page.label }}</template>
+      <el-menu-item
+        v-for="subpage in page.items"
+        :index="`${page.index}-${subpage.index}`"
+      >
+        {{ subpage.label }}
       </el-menu-item>
-      <el-sub-menu v-else :index="page.index">
-        <template #title>{{ page.label }}</template>
-        <el-menu-item
-          v-for="subpage in page.items"
-          :index="`${page.index}-${subpage.index}`"
-        >
-          {{ subpage.label }}
-        </el-menu-item>
-      </el-sub-menu>
-    </div>
+    </el-sub-menu>
+    <el-menu-item v-for="page in ps_n" :index="page.index">
+      {{ page.label }}
+    </el-menu-item>
     <el-menu-item @click="changeDark">
       <el-switch
         v-model="dark"
@@ -44,6 +42,9 @@ const props = defineProps({
   pages: Array,
   currentPage: String,
 });
+
+const ps_n = props.pages.filter((it) => it.items == undefined);
+const ps_i = props.pages.filter((it) => it.items != undefined);
 const emit = defineEmits(["navigateTo"]);
 const dark = ref(isDark.value);
 const activeIndex = ref(props.currentPage);
@@ -64,12 +65,13 @@ function changeDark() {
   flex-grow: 1;
 }
 
-.ep-menu-item {
+.ep-menu-item,
+ep-sub-menu {
   margin-right: 0px;
+  height: 100%;
 }
 
 .is-active {
   border-bottom: 2px solid var(--ep-menu-active-color);
-  height: 100%;
 }
 </style>
