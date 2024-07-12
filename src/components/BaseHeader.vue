@@ -49,9 +49,7 @@ const emit = defineEmits(["navigateTo"]);
 const dark = ref(isDark.value);
 const activeIndex = ref(props.currentPage);
 const handleSelect = (key, keyPath) => {
-  console.log(key);
   emit("navigateTo", key);
-  console.log("test1");
 };
 
 function changeDark() {
