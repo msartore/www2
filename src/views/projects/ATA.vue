@@ -4,7 +4,7 @@
 
 <script setup>
 const project = {
-  banner: "/src/assets/banner4.png",
+  banner: "/assets/banner4.png",
   images: [],
   buttons: [
     {
@@ -20,6 +20,11 @@ const project = {
       link: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool",
     },
   ],
+  os_supported: {
+    android: false,
+    windows: true,
+    linux: true,
+  },
   description:
     "ATA is an app that allows you to perform advanced tasks on your Android device using a shell interface. You can use ATA to access and modify your device's system settings, files, and features. You can also use ATA to install, uninstall, and restore apps on your device. ATA is powered by SDK Platform Tools, which are a set of command-line tools that allow you to communicate with your device and execute various operations. ATA is available for Linux and Windows, and is the app for advanced Android users who want to have more control over their device using a shell.",
   features: [

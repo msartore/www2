@@ -24,7 +24,7 @@
       <h1>Supported systems</h1>
     </el-row>
     <el-row>
-      <a class="icon">
+      <a v-if="project.os_supported.android" class="icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -37,7 +37,7 @@
           />
         </svg>
       </a>
-      <a class="icon">
+      <a v-if="project.os_supported.windows" class="icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -50,7 +50,7 @@
           />
         </svg>
       </a>
-      <a class="icon">
+      <a v-if="project.os_supported.linux" class="icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -94,7 +94,11 @@ const props = defineProps({
     description: String,
     features: [],
     terms: String,
-    op_supported: [],
+    os_supported: {
+      android: Boolean,
+      windows: Boolean,
+      linux: Boolean,
+    },
   },
 });
 

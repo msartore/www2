@@ -4,7 +4,7 @@
 
 <script setup>
 const project = {
-  banner: "/src/assets/banner4.png",
+  banner: "/assets/banner4.png",
   images: [],
   buttons: [
     {
@@ -16,7 +16,11 @@ const project = {
       link: "https://github.com/msartore/Ares",
     },
   ],
-
+  os_supported: {
+    android: true,
+    windows: false,
+    linux: false,
+  },
   description:
     "Ares is an app that makes file sharing fast and convenient. You can use Ares to send and receive files from any device on your local network without using the internet. You can create your own server or join others with a simple scan. You can also access the server from your app or browser and upload files with ease. Ares is the app for file sharing via local network.",
   features: [

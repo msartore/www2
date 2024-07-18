@@ -7,11 +7,7 @@
         </el-row>
         <el-row>
           <el-col :span="8">
-            <el-image
-              class="profile-image"
-              src="/src/assets/p_picture.jpg"
-              lazy
-            />
+            <el-image class="profile-image" src="/assets/p_picture.jpg" lazy />
           </el-col>
           <el-col :span="1"></el-col>
           <el-col :span="15">
@@ -90,7 +86,7 @@ const ew_list = [
       "Bachelor's degree in Techniques for Software Application Development",
     description:
       "Bachelor's Degree in Techniques for Software Development, equipped me with the skills to create usable, efficient, and error-free software for various applications. I manage the software creation process through all stages of its life cycle, from requirement definition and design to implementation, maintenance, and upgrades. I excel in communicating and collaborating within development teams, employing agile methods to achieve functionality, quality, and timely delivery. My expertise includes a thorough understanding of the programming languages, tools, and technologies essential for building software across different platforms. Additionally, I am proficient in administering systems, networks, and applications, both locally and in the cloud.",
-    logo: "/src/assets/company/uoc.jpg",
+    logo: "/assets/company/uoc.jpg",
     date: "Feb 2022 - Feb 2025",
   },
   {
@@ -98,7 +94,7 @@ const ew_list = [
     course_name: "Mobile Android Developer · Intership",
     description:
       "As a Mobile Android Developer in the medical area, I was responsible for designing and developing mobile applications for the Android ecosystem. My role involved working closely with cross-functional teams to create user-friendly and efficient apps that met the needs of healthcare professionals. I utilized my knowledge of Kotlin, Java and experience with third-party libraries and APIs to create robust and high-performing applications. I also contributed to the testing, releasing, and support of these applications to ensure their continued success. During my time in this position, I gained valuable experience working in the healthcare industry.",
-    logo: "/src/assets/company/nextage.jpg",
+    logo: "/assets/company/nextage.jpg",
     date: "Apr 2021 - Dec 2021",
   },
   {
@@ -107,7 +103,7 @@ const ew_list = [
     course_name: "Development of software systems for industry 4.0",
     description:
       "As a highly technological professional, I specialize in analyzing, designing, developing, and managing software and hardware systems to support Industry 4.0. My training includes comprehensive technical and design skills, covering all phases of the process from client briefings and programming activities to testing and release. Additionally, I am adept at implementing application security and data protection, ensuring robust management and safeguarding of data.",
-    logo: "/src/assets/company/its.jpg",
+    logo: "/assets/company/its.jpg",
     date: "2019 - 2021",
   },
 ];
