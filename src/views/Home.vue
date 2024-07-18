@@ -7,7 +7,7 @@
         </el-row>
         <el-row>
           <el-col :span="8">
-            <el-image class="profile-image" src="/assets/p_picture.jpg" lazy />
+            <el-image class="profile-image" :src="p_picture" lazy />
           </el-col>
           <el-col :span="1"></el-col>
           <el-col :span="15">
@@ -75,6 +75,11 @@
 </template>
 
 <script setup>
+import its from "@/assets/company/its.jpg";
+import nextage from "@/assets/company/nextage.jpg";
+import uoc from "@/assets/company/uoc.jpg";
+import p_picture from "@/assets/p_picture.jpg";
+
 const props = defineProps({
   projects: Array,
 });
@@ -86,7 +91,7 @@ const ew_list = [
       "Bachelor's degree in Techniques for Software Application Development",
     description:
       "Bachelor's Degree in Techniques for Software Development, equipped me with the skills to create usable, efficient, and error-free software for various applications. I manage the software creation process through all stages of its life cycle, from requirement definition and design to implementation, maintenance, and upgrades. I excel in communicating and collaborating within development teams, employing agile methods to achieve functionality, quality, and timely delivery. My expertise includes a thorough understanding of the programming languages, tools, and technologies essential for building software across different platforms. Additionally, I am proficient in administering systems, networks, and applications, both locally and in the cloud.",
-    logo: "/assets/company/uoc.jpg",
+    logo: uoc,
     date: "Feb 2022 - Feb 2025",
   },
   {
@@ -94,7 +99,7 @@ const ew_list = [
     course_name: "Mobile Android Developer · Intership",
     description:
       "As a Mobile Android Developer in the medical area, I was responsible for designing and developing mobile applications for the Android ecosystem. My role involved working closely with cross-functional teams to create user-friendly and efficient apps that met the needs of healthcare professionals. I utilized my knowledge of Kotlin, Java and experience with third-party libraries and APIs to create robust and high-performing applications. I also contributed to the testing, releasing, and support of these applications to ensure their continued success. During my time in this position, I gained valuable experience working in the healthcare industry.",
-    logo: "/assets/company/nextage.jpg",
+    logo: nextage,
     date: "Apr 2021 - Dec 2021",
   },
   {
@@ -103,7 +108,7 @@ const ew_list = [
     course_name: "Development of software systems for industry 4.0",
     description:
       "As a highly technological professional, I specialize in analyzing, designing, developing, and managing software and hardware systems to support Industry 4.0. My training includes comprehensive technical and design skills, covering all phases of the process from client briefings and programming activities to testing and release. Additionally, I am adept at implementing application security and data protection, ensuring robust management and safeguarding of data.",
-    logo: "/assets/company/its.jpg",
+    logo: its,
     date: "2019 - 2021",
   },
 ];

@@ -7,7 +7,7 @@
     @select="handleSelect"
   >
     <el-menu-item :index="'0'">
-      <img style="width: 30px" src="../assets/favicon.png" alt="Element logo" />
+      <img style="width: 30px" :src="favicon" alt="Element logo" />
     </el-menu-item>
     <div class="flex-grow" />
     <el-sub-menu v-for="page in ps_i" :index="page.index" :key="page.index">
@@ -38,6 +38,7 @@
 import { ref } from "vue";
 import { toggleDark, isDark } from "~/composables";
 import { Moon, Sunny } from "@element-plus/icons-vue";
+import favicon from "@/assets/favicon.png";
 
 const props = defineProps({
   pages: Array,

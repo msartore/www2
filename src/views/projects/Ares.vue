@@ -3,8 +3,10 @@
 </template>
 
 <script setup>
+import b from "@/assets/banner4.png";
+
 const project = {
-  banner: "/assets/banner4.png",
+  banner: b,
   images: [],
   buttons: [
     {

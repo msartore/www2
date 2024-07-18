@@ -68,7 +68,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
+import banner1 from "@/assets/banner1.png";
+import banner4 from "@/assets/banner4.png";
+import banner3 from "@/assets/banner3.png";
 
 const router = useRouter();
 
@@ -82,19 +85,19 @@ const pages = ref([
         label: "ATA-GUI",
         path: "/projects/ata-gui",
         index: "0",
-        img: "/assets/banner1.png",
+        img: banner1,
       },
       {
         label: "Ares",
         path: "/projects/ares",
         index: "1",
-        img: "/assets/banner4.png",
+        img: banner4,
       },
       {
         label: "ATA",
         path: "/projects/ata",
         index: "2",
-        img: "/assets/banner3.png",
+        img: banner3,
       },
     ],
   },
