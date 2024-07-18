@@ -58,6 +58,7 @@
         <el-carousel-item
           v-for="project in props.projects"
           :key="project.label"
+          @click="navigateTo(project.path)"
         >
           <img class="img_carousel" :src="project.img" lazy />
         </el-carousel-item>
@@ -72,6 +73,7 @@
         <el-carousel-item
           v-for="project in props.projects"
           :key="project.label"
+          @click="navigateTo(project.path)"
         >
           <img class="img_carousel" :src="project.img" lazy />
         </el-carousel-item>
@@ -110,11 +112,18 @@ import its from "@/assets/company/its.jpg";
 import nextage from "@/assets/company/nextage.jpg";
 import uoc from "@/assets/company/uoc.jpg";
 import p_picture from "@/assets/p_picture.jpg";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const props = defineProps({
   projects: Array,
   isMobile: Boolean,
 });
+
+function navigateTo(path) {
+  router.push(path);
+  window.scrollTo(0, 0);
+}
 
 const ew_list = [
   {
