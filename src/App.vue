@@ -11,7 +11,7 @@
         </header>
         <main>
           <div style="max-width: 1000px">
-            <RouterView :projects="pages[0].items" />
+            <RouterView :isMobile="isMobile" :projects="pages[0].items" />
           </div>
         </main>
         <el-footer class="footer">
@@ -67,11 +67,19 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import banner1 from "@/assets/banner1.png";
 import banner4 from "@/assets/banner4.png";
 import banner3 from "@/assets/banner3.png";
+
+let windowWidth = ref(window.innerWidth);
+const onWidthChange = () => (windowWidth.value = window.innerWidth);
+
+const isMobile = computed(() => {
+  if (windowWidth.value < 850) return true;
+  else return false;
+});
 
 const router = useRouter();
 
@@ -119,6 +127,9 @@ function navigateTo(index) {
     );
   } else router.push(pages.value.find((it) => it.index == index).path);
 }
+
+onMounted(() => window.addEventListener("resize", onWidthChange));
+onUnmounted(() => window.removeEventListener("resize", onWidthChange));
 </script>
 
 <style lang="scss">
