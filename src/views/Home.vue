@@ -1,33 +1,35 @@
 <template>
   <el-row>
-    <h2>About</h2>
     <el-col>
       <el-row>
         <el-row style="width: 100%" justify="space-between">
-          <el-col :span="6" style="align-content: center">
+          <h1 style="width: 100%" class="name">Welcome to my website!</h1>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
             <el-image
-              class="profile-image grid-content"
+              class="profile-image"
               src="/src/assets/p_picture.jpg"
               lazy
             />
           </el-col>
-          <el-col :span="18">
-            <h1 style="width: 100%" class="name">Massimiliano Sartore</h1>
+          <el-col :span="1"></el-col>
+          <el-col :span="15">
+            <p class="bio">
+              Hi my name is Massimiliano Sartore and I am a software developer
+              from Italy. I have a passion for mobile development and creating
+              innovative solutions for different platforms. I have a solid
+              foundation in software engineering and industry 4.0, as I
+              graduated from ITS-ICT as a Higher technician in 2021. I am also
+              pursuing a degree in computer science to expand my knowledge and
+              skills in this field. I love learning new technologies and
+              applying them to real-world challenges that can make a positive
+              impact. On this website, you can find out more about me and my
+              projects, as well as contact me if you are interested in working
+              with me or collaborating on something exciting.
+            </p>
           </el-col>
         </el-row>
-        <el-text tag="p">
-          Hello and thank you for visiting my website. My name is Massimiliano
-          Sartore and I am a software developer from Italy. I have a passion for
-          mobile development and creating innovative solutions for different
-          platforms. I have a solid foundation in software engineering and
-          industry 4.0, as I graduated from ITS-ICT as a Higher technician in
-          2021. I am also pursuing a degree in computer science to expand my
-          knowledge and skills in this field. I love learning new technologies
-          and applying them to real-world challenges that can make a positive
-          impact. On this website, you can find out more about me and my
-          projects, as well as contact me if you are interested in working with
-          me or collaborating on something exciting.
-        </el-text>
       </el-row>
     </el-col>
   </el-row>
@@ -111,10 +113,20 @@ const ew_list = [
 ];
 </script>
 
-<style>
+<style lang="scss">
+.bio {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0px;
+}
+
+.about {
+  display: flex;
+}
+
 .name {
-  font-size: 5vw;
-  text-align: end;
+  font-size: clamp(1rem, 5vw, 5rem);
+  text-align: center;
+  color: var(--ep-color-primary);
 }
 
 .company_logo {
@@ -132,10 +144,6 @@ const ew_list = [
 
 .flex {
   display: flex;
-}
-
-p {
-  text-align: justify;
 }
 
 h2 {

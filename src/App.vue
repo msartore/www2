@@ -2,18 +2,18 @@
   <el-config-provider namespace="ep">
     <div class="common-layout">
       <el-container>
-        <el-header class="navbar">
+        <header class="navbar">
           <BaseHeader
             :currentPage="currentPage"
             :pages="pages"
             @navigate-to="navigateTo"
           />
-        </el-header>
-        <el-main class="main-container">
-          <div style="width: 80%">
+        </header>
+        <main>
+          <div style="max-width: 1000px">
             <RouterView :projects="pages[0].items" />
           </div>
-        </el-main>
+        </main>
         <el-footer class="footer">
           <el-row justify="center">
             <a href="https://github.com/msartore"
@@ -96,12 +96,6 @@ const pages = ref([
         index: "2",
         img: "/src/assets/banner3.png",
       },
-      {
-        label: "Material Gallery",
-        path: "/projects/material-gallery",
-        index: "3",
-        img: "/src/assets/banner2.png",
-      },
     ],
   },
   { index: "2", label: "Contact", path: "/contact" },
@@ -124,7 +118,14 @@ function navigateTo(index) {
 }
 </script>
 
-<style>
+<style lang="scss">
+main {
+  margin: 50px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -132,15 +133,8 @@ function navigateTo(index) {
   background-color: var(--ep-bg-color);
 }
 
-#app {
-  background-color: var(--ep-bg-color);
-}
-
-.main-container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+p {
+  text-align: justify;
 }
 
 .footer {

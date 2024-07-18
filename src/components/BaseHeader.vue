@@ -10,16 +10,17 @@
       <img style="width: 30px" src="../assets/favicon.png" alt="Element logo" />
     </el-menu-item>
     <div class="flex-grow" />
-    <el-sub-menu v-for="page in ps_i" :index="page.index">
+    <el-sub-menu v-for="page in ps_i" :index="page.index" :key="page.index">
       <template #title>{{ page.label }}</template>
       <el-menu-item
         v-for="subpage in page.items"
+        :key="subpage.index"
         :index="`${page.index}-${subpage.index}`"
       >
         {{ subpage.label }}
       </el-menu-item>
     </el-sub-menu>
-    <el-menu-item v-for="page in ps_n" :index="page.index">
+    <el-menu-item v-for="page in ps_n" :index="page.index" :key="page.index">
       {{ page.label }}
     </el-menu-item>
     <el-menu-item @click="changeDark">
