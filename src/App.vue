@@ -3,32 +3,40 @@
     <div class="common-layout">
       <el-container>
         <header class="navbar">
-          <img class="logo" v-if="isMobile" :src="favicon" />
-          <a @click="openMenu" class="hamburger" v-if="isMobile">
-            <svg
-              v-if="isMenuOpen"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="35px"
-              height="35px"
-              stroke-width="1.5"
-              fill="currentColor"
-            >
-              <path
-                d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
-              ></path>
-            </svg>
-            <svg
-              v-else
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="35px"
-              height="35px"
-              fill="currentColor"
-            >
-              <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
-            </svg>
-          </a>
+          <el-row class="navbar-smartphone" :gutter="24" v-if="isMobile">
+            <el-col :span="1" :offset="1">
+              <a @click="openMenu" class="logo">
+                <svg
+                  v-if="isMenuOpen"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="35px"
+                  height="35px"
+                  stroke-width="1.5"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+                  ></path>
+                </svg>
+                <svg
+                  v-else
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="35px"
+                  height="35px"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"
+                  ></path>
+                </svg>
+              </a>
+            </el-col>
+            <el-col :span="1" :offset="9">
+              <img @click="navigateHome" class="logo" :src="favicon" />
+            </el-col>
+          </el-row>
           <BaseHeader
             v-else
             :currentPage="currentPage"
@@ -173,7 +181,12 @@ onUnmounted(() => window.removeEventListener("resize", onWidthChange));
 <style lang="scss">
 .logo {
   width: 40px;
-  margin: 10px;
+}
+
+.navbar-smartphone {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 main {
@@ -203,8 +216,6 @@ main {
   z-index: 1000;
   background-color: var(--ep-bg-color);
   border-bottom: solid 1px var(--ep-menu-border-color);
-  justify-content: space-evenly;
-  display: grid;
 }
 
 p {

@@ -1,7 +1,6 @@
 <template>
   <div class="menu">
     <el-menu
-      :default-active="activeIndex"
       class="el-menu-vertical-demo"
       :collapse="isCollapse"
       @select="handleSelect"
@@ -63,7 +62,6 @@ const isCollapse = ref(true);
 <style>
 .menu {
   position: fixed;
-  margin-top: 60px;
   width: fit-content;
   z-index: 1000;
   height: 100%;
