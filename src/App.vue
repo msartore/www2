@@ -10,7 +10,7 @@
           />
         </header>
         <main>
-          <div style="max-width: 1000px">
+          <div class="main-container">
             <RouterView :isMobile="isMobile" :projects="pages[0].items" />
           </div>
         </main>
@@ -138,6 +138,11 @@ main {
   margin-top: 100px;
   display: flex;
   justify-content: center;
+}
+
+.main-container {
+  max-width: 1000px;
+  width: 100%;
 }
 
 .navbar {

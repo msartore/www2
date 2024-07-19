@@ -1,6 +1,6 @@
 <template>
-  <el-row class="banner">
-    <el-image :src="project.banner" />
+  <el-row>
+    <img class="banner" :src="project.banner" />
   </el-row>
   <el-row>
     <a
@@ -106,7 +106,6 @@ const project = props.projectData;
 <style>
 .banner {
   width: 100%;
-  justify-content: center;
 }
 
 .icon {
