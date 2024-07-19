@@ -155,7 +155,7 @@ const ew_list = [
 ];
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .bio {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin: 0px;

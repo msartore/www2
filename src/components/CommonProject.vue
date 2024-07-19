@@ -103,7 +103,7 @@ const props = defineProps({
 const project = props.projectData;
 </script>
 
-<style>
+<style scoped>
 .banner {
   width: 100%;
 }

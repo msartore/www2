@@ -145,7 +145,8 @@ const pages = ref([
       },
     ],
   },
-  { index: "2", label: "Contact", path: "/contact" },
+  { index: "2", label: "Donation", path: "/donation" },
+  { index: "3", label: "Contact", path: "/contact" },
 ]);
 
 function navigateHome() {
@@ -175,7 +176,7 @@ onMounted(() => window.addEventListener("resize", onWidthChange));
 onUnmounted(() => window.removeEventListener("resize", onWidthChange));
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .menu-icon {
   position: absolute;
   left: 10px;
@@ -223,6 +224,10 @@ main {
   z-index: 1000;
   background-color: var(--ep-bg-color);
   border-bottom: solid 1px var(--ep-menu-border-color);
+}
+
+.ep-carousel__mask {
+  background-color: transparent;
 }
 
 p {

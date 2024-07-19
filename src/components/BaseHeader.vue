@@ -61,7 +61,7 @@ function changeDark() {
 }
 </script>
 
-<style>
+<style scoped>
 .flex-grow {
   flex-grow: 1;
 }

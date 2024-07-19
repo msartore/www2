@@ -11,7 +11,7 @@
 import notFound from "@/assets/404.svg";
 </script>
 
-<style>
+<style scoped>
 .image {
   width: 50%;
 }

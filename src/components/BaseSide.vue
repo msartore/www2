@@ -59,7 +59,7 @@ function changeDark() {
 const isCollapse = ref(true);
 </script>
 
-<style>
+<style scoped>
 .menu {
   position: fixed;
   width: fit-content;
