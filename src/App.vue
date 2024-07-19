@@ -214,7 +214,7 @@ main {
 
 .main-container {
   max-width: 1000px;
-  width: 100%;
+  width: max-content;
 }
 
 .navbar {
@@ -224,10 +224,6 @@ main {
   z-index: 1000;
   background-color: var(--ep-bg-color);
   border-bottom: solid 1px var(--ep-menu-border-color);
-}
-
-.ep-carousel__mask {
-  background-color: transparent;
 }
 
 p {

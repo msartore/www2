@@ -66,12 +66,6 @@ function changeDark() {
   flex-grow: 1;
 }
 
-.ep-menu-item,
-ep-sub-menu {
-  margin-right: 0px;
-  height: 100%;
-}
-
 .is-active {
   border-bottom: 2px solid var(--ep-menu-active-color);
 }

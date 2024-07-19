@@ -2,14 +2,14 @@
   <div class="container">
     <div class="center">
       <img class="qr" :src="bmc" />
-      <p>Donate via "Buy me a coffee"</p>
+      <p class="center">Donate via "Buy me a coffee"</p>
       <a href="https://www.buymeacoffee.com/msartore">
         <el-button type="primary" class="c-button"> Donate </el-button>
       </a>
     </div>
     <div class="center">
       <img class="qr" :src="revolut" />
-      <p>Donate via Revolut</p>
+      <p class="center">Donate via Revolut</p>
       <a href="https://revolut.me/msartore">
         <el-button type="primary" class="c-button"> Donate </el-button>
       </a>
