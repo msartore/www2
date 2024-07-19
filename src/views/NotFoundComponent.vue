@@ -1,7 +1,7 @@
 <template>
   <el-col>
     <div class="center">
-      <img class="banner" :src="notFound" />
+      <img class="image" :src="notFound" />
       <p class="center">Page not found!</p>
     </div>
   </el-col>
@@ -12,7 +12,7 @@ import notFound from "@/assets/404.svg";
 </script>
 
 <style>
-.banner {
+.image {
   width: 50%;
 }
 

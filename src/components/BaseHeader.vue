@@ -50,6 +50,7 @@ const ps_i = props.pages.filter((it) => it.items != undefined);
 const emit = defineEmits(["navigateTo"]);
 const dark = ref(isDark.value);
 const activeIndex = ref(props.currentPage);
+
 const handleSelect = (key, keyPath) => {
   emit("navigateTo", key);
 };

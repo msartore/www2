@@ -3,7 +3,40 @@
     <div class="common-layout">
       <el-container>
         <header class="navbar">
+          <img class="logo" v-if="isMobile" :src="favicon" />
+          <a @click="openMenu" class="hamburger" v-if="isMobile">
+            <svg
+              v-if="isMenuOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="35px"
+              height="35px"
+              stroke-width="1.5"
+              fill="currentColor"
+            >
+              <path
+                d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+              ></path>
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="35px"
+              height="35px"
+              fill="currentColor"
+            >
+              <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
+            </svg>
+          </a>
           <BaseHeader
+            v-else
+            :currentPage="currentPage"
+            :pages="pages"
+            @navigate-to="navigateTo"
+          />
+          <BaseSide
+            v-if="isMenuOpen && isMobile"
             :currentPage="currentPage"
             :pages="pages"
             @navigate-to="navigateTo"
@@ -69,20 +102,19 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import favicon from "@/assets/favicon.png";
 import banner1 from "@/assets/banner1.png";
 import banner4 from "@/assets/banner4.png";
 import banner3 from "@/assets/banner3.png";
 
-let windowWidth = ref(window.innerWidth);
+const windowWidth = ref(window.innerWidth);
 const onWidthChange = () => (windowWidth.value = window.innerWidth);
-
+const isMenuOpen = ref(false);
 const isMobile = computed(() => {
   if (windowWidth.value < 850) return true;
   else return false;
 });
-
 const router = useRouter();
-
 const currentPage = ref("0");
 const pages = ref([
   {
@@ -116,6 +148,10 @@ function navigateHome() {
   router.push("/");
 }
 
+function openMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
+
 function navigateTo(index) {
   if (index === "0") navigateHome();
   else if (index.includes("-")) {
@@ -126,6 +162,8 @@ function navigateTo(index) {
         ?.items.find((it) => it.index == iS[1]).path
     );
   } else router.push(pages.value.find((it) => it.index == index).path);
+
+  isMenuOpen.value = false;
 }
 
 onMounted(() => window.addEventListener("resize", onWidthChange));
@@ -133,11 +171,24 @@ onUnmounted(() => window.removeEventListener("resize", onWidthChange));
 </script>
 
 <style lang="scss">
+.logo {
+  width: 40px;
+  margin: 10px;
+}
+
 main {
   margin: 50px;
   margin-top: 100px;
   display: flex;
   justify-content: center;
+}
+
+.hamburger {
+  margin-left: 10px;
+  position: absolute;
+  align-content: center;
+  height: 100%;
+  color: var(--ep-text-color-primary);
 }
 
 .main-container {
@@ -147,9 +198,13 @@ main {
 
 .navbar {
   position: fixed;
+  height: 60px;
   width: 100%;
   z-index: 1000;
   background-color: var(--ep-bg-color);
+  border-bottom: solid 1px var(--ep-menu-border-color);
+  justify-content: space-evenly;
+  display: grid;
 }
 
 p {
