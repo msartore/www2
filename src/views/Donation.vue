@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-import bmc from "@/assets/bmc_qr.png";
-import revolut from "@/assets/revolut.png";
+import bmc from "@/assets/bmc_qr.jpg";
+import revolut from "@/assets/revolut.jpg";
 </script>
 
 <style lang="scss" scoped>
