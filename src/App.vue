@@ -52,6 +52,7 @@
           </div>
         </main>
         <el-footer class="footer">
+          <hr />
           <el-row justify="center">
             <a href="https://github.com/msartore"
               ><svg
