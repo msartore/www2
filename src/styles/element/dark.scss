@@ -1,17 +1,22 @@
 // only scss variables
 
-$--colors: (
-  "primary": (
-    "base": #bb4956,
-  ),
-);
-
 $violet-jtc: rgba(75, 35, 76, 1);
 $rebecca-purple: rgba(105, 52, 150, 1);
 $redwood: rgb(187, 73, 86);
 $licorice: rgba(11, 0, 5, 1);
 $giants-orange: rgb(250, 86, 36);
 
+$--colors: (
+  "primary": (
+    "base": $redwood,
+  ),
+);
+
 @forward "element-plus/theme-chalk/src/dark/var.scss" with (
-  $colors: $--colors
+  $colors: $--colors,
+  $bg-color: (
+    "page": #0a0a0a,
+    "": #030303,
+    "overlay": $licorice,
+  )
 );

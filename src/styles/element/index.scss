@@ -19,14 +19,6 @@ $--colors: (
   ),
 );
 
-/* SCSS RGB */
-$violet-jtc: rgba(75, 35, 76, 1);
-$rebecca-purple: rgba(105, 52, 150, 1);
-$redwood: #bb4956;
-$licorice: rgba(11, 0, 5, 1);
-$giants-orange: rgb(250, 86, 36);
-$white: white;
-
 // we can add this to custom namespace, default is 'el'
 @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
   $namespace: "ep"
