@@ -6,7 +6,7 @@ import Donation from "../views/Donation.vue";
 import Atagui from "../views/projects/ATA-GUI.vue";
 import Ata from "../views/projects/ATA.vue";
 import Ares from "../views/projects/Ares.vue";
-import NotFoundComponent from "../views/NotFoundComponent.vue";
+import NotFound from "../views/NotFound.vue";
 import AresPrivacy from "../views/projects/privacy/Ares.vue";
 
 const routes = [
@@ -19,7 +19,7 @@ const routes = [
   { path: "/projects/ares/privacy", component: AresPrivacy },
   {
     path: "/:catchAll(.*)*",
-    component: NotFoundComponent,
+    component: NotFound,
   },
 ];
 

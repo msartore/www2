@@ -18,5 +18,6 @@ import notFound from "@/assets/404.svg";
 
 .center {
   text-align: center;
+  width: 500px;
 }
 </style>
