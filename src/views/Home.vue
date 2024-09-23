@@ -11,17 +11,17 @@
           <div class="about">
             <el-image class="profile-image" :src="p_picture" lazy />
             <p class="bio">
-              Hi my name is Massimiliano Sartore and I am a software developer
+              Hi, my name is Massimiliano Sartore and I am a software developer
               from Italy. I have a passion for mobile development and creating
               innovative solutions for different platforms. I have a solid
               foundation in software engineering and industry 4.0, as I
               graduated from ITS-ICT as a Higher technician in 2021. I am also
               pursuing a degree in computer science to expand my knowledge and
-              skills in this field. I love learning new technologies and
-              applying them to real-world challenges that can make a positive
-              impact. On this website, you can find out more about me and my
-              projects, as well as contact me if you are interested in working
-              with me or collaborating on something exciting.
+              skills in tmy field. I love learning new technologies and applying
+              them to real-world challenges that can make a positive impact. On
+              tmy website, you can find out more about me and my projects, as
+              well as contact me if you are interested in working with me or
+              collaborating on something exciting.
             </p>
           </div>
         </el-row>
@@ -32,17 +32,17 @@
           <el-col :span="1"></el-col>
           <el-col :span="15">
             <p class="bio">
-              Hi my name is Massimiliano Sartore and I am a software developer
+              Hi, my name is Massimiliano Sartore and I am a software developer
               from Italy. I have a passion for mobile development and creating
               innovative solutions for different platforms. I have a solid
               foundation in software engineering and industry 4.0, as I
               graduated from ITS-ICT as a Higher technician in 2021. I am also
               pursuing a degree in computer science to expand my knowledge and
-              skills in this field. I love learning new technologies and
-              applying them to real-world challenges that can make a positive
-              impact. On this website, you can find out more about me and my
-              projects, as well as contact me if you are interested in working
-              with me or collaborating on something exciting.
+              skills in tmy field. I love learning new technologies and applying
+              them to real-world challenges that can make a positive impact. On
+              tmy website, you can find out more about me and my projects, as
+              well as contact me if you are interested in working with me or
+              collaborating on something exciting.
             </p>
           </el-col>
         </el-row>
@@ -116,6 +116,7 @@ import uoc from "@/assets/company/uoc.jpg";
 import p_picture from "@/assets/p_picture.jpg";
 import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
+import { useHead } from "@unhead/vue";
 
 const welcome_msg_list_c = [
   "welcome to my website",
@@ -144,16 +145,25 @@ function messager() {
 
   if (messagerWriting) {
     if (message.value.length < currentMessage.length) {
-      message.value += currentMessage[message.value.length];
+      if (message.value == "~")
+        message.value = currentMessage[message.value.length - 1];
+      else message.value += currentMessage[message.value.length];
     } else {
-      messagerWriting = false;
+      setTimeout(() => {
+        messagerWriting = false;
+      }, 3000);
     }
   } else {
-    if (message.value.length > 0) {
-      message.value = message.value.slice(0, -1);
-    } else {
+    if (message.value.length == 1) {
+      message.value = "~";
       messagerWriting = true;
-      currentMessageIndex = (currentMessageIndex + 1) % welcome_msg_list.length;
+      if (currentMessageIndex == 2) {
+        currentMessageIndex = 0;
+      } else {
+        currentMessageIndex++;
+      }
+    } else {
+      message.value = message.value.slice(0, -1);
     }
   }
 }
@@ -172,13 +182,13 @@ const ew_list = [
     company_name: "Nextage S.R.L.",
     course_name: "Mobile Android Developer · Intership",
     description:
-      "As a Mobile Android Developer in the medical area, I was responsible for designing and developing mobile applications for the Android ecosystem. My role involved working closely with cross-functional teams to create user-friendly and efficient apps that met the needs of healthcare professionals. I utilized my knowledge of Kotlin, Java and experience with third-party libraries and APIs to create robust and high-performing applications. I also contributed to the testing, releasing, and support of these applications to ensure their continued success. During my time in this position, I gained valuable experience working in the healthcare industry.",
+      "As a Mobile Android Developer in the medical area, I was responsible for designing and developing mobile applications for the Android ecosystem. My role involved working closely with cross-functional teams to create user-friendly and efficient apps that met the needs of healthcare professionals. I utilized my knowledge of Kotlin, Java and experience with third-party libraries and APIs to create robust and high-performing applications. I also contributed to the testing, releasing, and support of these applications to ensure their continued success. During my time in tmy position, I gained valuable experience working in the healthcare industry.",
     logo: nextage,
     date: "Apr 2021 - Dec 2021",
   },
   {
     company_name:
-      "Istituto Tecnico Superiore per le Tecnologie dell’Informazione e della Comunicazione",
+      "Istituto Tecnico Superiore per le Tecnologie dell'Informazione e della Comunicazione",
     course_name: "Development of software systems for industry 4.0",
     description:
       "As a highly technological professional, I specialize in analyzing, designing, developing, and managing software and hardware systems to support Industry 4.0. My training includes comprehensive technical and design skills, covering all phases of the process from client briefings and programming activities to testing and release. Additionally, I am adept at implementing application security and data protection, ensuring robust management and safeguarding of data.",
@@ -187,9 +197,30 @@ const ew_list = [
   },
 ];
 
+useHead({
+  title: "Massimiliano Sartore - Software Developer",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Massimiliano Sartore, a software developer and tech enthusiast, shares my projects and insights on technology. Explore my work, learn about my journey, and get in touch.",
+    },
+    {
+      property: "og:title",
+      content: "Massimiliano Sartore - Software Developer",
+    },
+    {
+      property: "og:description",
+      content: "Massimiliano Sartore, a software developer and tech enthusiast",
+    },
+    { property: "og:url", content: "https://msartore.dev/" },
+    { property: "og:type", content: "website" },
+  ],
+});
+
 onMounted(() => {
   setTimeout(() => {
-    setInterval(messager, 400);
+    setInterval(messager, 250);
   }, 5000);
 });
 </script>
