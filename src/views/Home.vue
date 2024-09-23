@@ -118,17 +118,15 @@ import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
 import { useHead } from "@unhead/vue";
 
-const welcome_msg_list_c = [
+const welcome_msg_list = [
   "welcome to my website",
   "explore my projects!",
-  "do you need to customize your android, check out ATA-GUI below",
-  "feel free to reach out for collaborations",
-  "discover my latest mobile apps",
+  "do you need to customize your android? check out ATA-GUI!",
+  "feel free to reach out for collaborations!",
 ];
 
 const message = ref("hi, I'm Massimiliano");
 
-var welcome_msg_list = [...welcome_msg_list_c];
 var messagerWriting = false;
 var currentMessageIndex = 0;
 
@@ -160,7 +158,7 @@ function messager() {
     if (message.value.length == 1) {
       message.value = "~";
       messagerWriting = true;
-      if (currentMessageIndex == 2) {
+      if (currentMessageIndex == welcome_msg_list.length - 1) {
         currentMessageIndex = 0;
       } else {
         currentMessageIndex++;
