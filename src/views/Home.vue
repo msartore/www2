@@ -119,10 +119,14 @@ import { onMounted, ref } from "vue";
 import { useHead } from "@unhead/vue";
 
 const welcome_msg_list_c = [
+  "hi, I'm Massimiliano",
   "welcome to my website",
   "explore my projects!",
-  "hi, I'm Massimiliano",
+  "do you need to customize your android, check out ATA-GUI below",
+  "feel free to reach out for collaborations",
+  "discover my latest mobile apps",
 ];
+
 const message = ref("welcome to my website!");
 
 var welcome_msg_list = [...welcome_msg_list_c];
@@ -221,7 +225,7 @@ useHead({
 onMounted(() => {
   setTimeout(() => {
     setInterval(messager, 250);
-  }, 5000);
+  }, 3000);
 });
 </script>
 
