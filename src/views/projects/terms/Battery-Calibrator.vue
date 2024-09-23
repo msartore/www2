@@ -139,3 +139,30 @@
     please do not hesitate to contact the Service Provider at msartore@tuta.io.
   </p>
 </template>
+
+<script setup>
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Terms & Conditions | Battery Calibrator",
+  meta: [
+    {
+      name: "description",
+      content: "Read the terms and conditions for the Battery Calibrator app.",
+    },
+    {
+      property: "og:title",
+      content: "Terms & Conditions | Battery Calibrator",
+    },
+    {
+      property: "og:description",
+      content: "Read the terms and conditions for the Battery Calibrator app.",
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://msartore.dev/projects/battery-calibrator/terms",
+    }, // Replace with your actual URL
+  ],
+});
+</script>

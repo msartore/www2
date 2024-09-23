@@ -14,3 +14,25 @@
     >
   </p>
 </template>
+
+<script setup>
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Contact Me | Massimiliano Sartore",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Get in touch with Massimiliano Sartore for inquiries, collaborations, or just to say hello.",
+    },
+    { property: "og:title", content: "Contact Me | Massimiliano Sartore" },
+    {
+      property: "og:description",
+      content: "Reach out for questions or collaborations.",
+    },
+    { property: "og:url", content: "https://msartore.dev/contact" },
+    { property: "og:type", content: "website" },
+  ],
+});
+</script>

@@ -203,3 +203,27 @@
     email at msartore@tuta.io.
   </p>
 </template>
+
+<script setup>
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Privacy Policy | Battery Calibrator",
+  meta: [
+    {
+      name: "description",
+      content: "Read the privacy policy for the Battery Calibrator app.",
+    },
+    { property: "og:title", content: "Privacy Policy | Battery Calibrator" },
+    {
+      property: "og:description",
+      content: "Read the privacy policy for the Battery Calibrator app.",
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://msartore.dev/projects/battery-calibrator/privacy",
+    },
+  ],
+});
+</script>

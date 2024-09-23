@@ -4,6 +4,7 @@
 
 <script setup>
 import b from "@/assets/banner1.png";
+import { useHead } from "@unhead/vue";
 
 const project = {
   banner: b,
@@ -58,4 +59,19 @@ const project = {
   terms:
     'Copyright © 2024 Massimiliano Sartore ATA-GUI is licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. Android is a trademark of Google LLC.',
 };
+
+useHead({
+  title: "ATA GUI - Advanced Tool for Android",
+  meta: [
+    { name: "description", content: project.description },
+    {
+      property: "og:title",
+      content: "ATA GUI - Advanced Tool for Android",
+    },
+    { property: "og:description", content: project.description },
+    { property: "og:image", content: project.banner },
+    { property: "og:url", content: "https://msartore.dev/projects/ata-gui" },
+    { property: "og:type", content: "website" },
+  ],
+});
 </script>

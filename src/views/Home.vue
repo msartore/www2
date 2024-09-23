@@ -3,7 +3,9 @@
     <el-col>
       <el-row>
         <el-row style="width: 100%" justify="space-between">
-          <h1 style="width: 100%" class="name">Welcome to my website!</h1>
+          <h1 v-if="message.length > 0" style="width: 100%" class="name">
+            {{ message }}
+          </h1>
         </el-row>
         <el-row v-if="isMobile">
           <div class="about">
@@ -113,6 +115,18 @@ import nextage from "@/assets/company/nextage.jpg";
 import uoc from "@/assets/company/uoc.jpg";
 import p_picture from "@/assets/p_picture.jpg";
 import { useRouter } from "vue-router";
+import { onMounted, ref } from "vue";
+
+const welcome_msg_list_c = [
+  "welcome to my website",
+  "explore my projects!",
+  "hi, I'm Massimiliano",
+];
+const message = ref("welcome to my website!");
+
+var welcome_msg_list = [...welcome_msg_list_c];
+var messagerWriting = false;
+var currentMessageIndex = 0;
 
 const router = useRouter();
 const props = defineProps({
@@ -123,6 +137,25 @@ const props = defineProps({
 function navigateTo(path) {
   router.push(path);
   window.scrollTo(0, 0);
+}
+
+function messager() {
+  let currentMessage = welcome_msg_list[currentMessageIndex];
+
+  if (messagerWriting) {
+    if (message.value.length < currentMessage.length) {
+      message.value += currentMessage[message.value.length];
+    } else {
+      messagerWriting = false;
+    }
+  } else {
+    if (message.value.length > 0) {
+      message.value = message.value.slice(0, -1);
+    } else {
+      messagerWriting = true;
+      currentMessageIndex = (currentMessageIndex + 1) % welcome_msg_list.length;
+    }
+  }
 }
 
 const ew_list = [
@@ -153,6 +186,12 @@ const ew_list = [
     date: "2019 - 2021",
   },
 ];
+
+onMounted(() => {
+  setTimeout(() => {
+    setInterval(messager, 400);
+  }, 5000);
+});
 </script>
 
 <style lang="scss">

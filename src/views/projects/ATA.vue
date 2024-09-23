@@ -4,6 +4,7 @@
 
 <script setup>
 import b from "@/assets/banner3.png";
+import { useHead } from "@unhead/vue";
 
 const project = {
   banner: b,
@@ -40,4 +41,16 @@ const project = {
   terms:
     "Copyright © 2023 Massimiliano Sartore\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/",
 };
+
+useHead({
+  title: "ATA - Advanced Tool for Android",
+  meta: [
+    { name: "description", content: project.description },
+    { property: "og:title", content: "ATA - Advanced Tool for Android" },
+    { property: "og:description", content: project.description },
+    { property: "og:image", content: project.banner },
+    { property: "og:url", content: "https://msartore.dev/projects/ata" },
+    { property: "og:type", content: "website" },
+  ],
+});
 </script>
