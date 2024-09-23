@@ -119,7 +119,6 @@ import { onMounted, ref } from "vue";
 import { useHead } from "@unhead/vue";
 
 const welcome_msg_list_c = [
-  "hi, I'm Massimiliano",
   "welcome to my website",
   "explore my projects!",
   "do you need to customize your android, check out ATA-GUI below",
@@ -127,7 +126,7 @@ const welcome_msg_list_c = [
   "discover my latest mobile apps",
 ];
 
-const message = ref("welcome to my website!");
+const message = ref("hi, I'm Massimiliano");
 
 var welcome_msg_list = [...welcome_msg_list_c];
 var messagerWriting = false;
