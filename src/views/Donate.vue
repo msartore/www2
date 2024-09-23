@@ -23,13 +23,13 @@ import revolut from "@/assets/revolut.jpg";
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "Donate me | Massimiliano Sartore",
+  title: "Support me | Massimiliano Sartore",
   meta: [
     {
       name: "description",
       content: "Support me by donating via Buy Me a Coffee or Revolut.",
     },
-    { property: "og:title", content: "Donate me | Massimiliano Sartore" },
+    { property: "og:title", content: "Support me | Massimiliano Sartore" },
     {
       property: "og:description",
       content: "Support me by donating via Buy Me a Coffee or Revolut.",
