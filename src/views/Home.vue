@@ -128,7 +128,7 @@ const welcome_msg_list = [
 const message = ref("hi, I'm Massimiliano");
 
 var messagerWriting = false;
-var currentMessageIndex = 0;
+var currentMessageIndex = -1;
 
 const router = useRouter();
 const props = defineProps({
