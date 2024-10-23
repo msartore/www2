@@ -9,39 +9,19 @@
           <div class="about">
             <el-image class="profile-image" :src="p_picture" lazy />
             <p class="bio">
-              Hi my name is Massimiliano Sartore and I am a software developer
-              from Italy. I have a passion for mobile development and creating
-              innovative solutions for different platforms. I have a solid
-              foundation in software engineering and industry 4.0, as I
-              graduated from ITS-ICT as a Higher technician in 2021. I am also
-              pursuing a degree in computer science to expand my knowledge and
-              skills in this field. I love learning new technologies and
-              applying them to real-world challenges that can make a positive
-              impact. On this website, you can find out more about me and my
-              projects, as well as contact me if you are interested in working
-              with me or collaborating on something exciting.
+              {{ ini_text }}
             </p>
           </div>
         </el-row>
         <el-row v-else>
-          <el-col :span="8">
-            <el-image class="profile-image" :src="p_picture" lazy />
-          </el-col>
-          <el-col :span="1"></el-col>
           <el-col :span="15">
             <p class="bio">
-              Hi my name is Massimiliano Sartore and I am a software developer
-              from Italy. I have a passion for mobile development and creating
-              innovative solutions for different platforms. I have a solid
-              foundation in software engineering and industry 4.0, as I
-              graduated from ITS-ICT as a Higher technician in 2021. I am also
-              pursuing a degree in computer science to expand my knowledge and
-              skills in this field. I love learning new technologies and
-              applying them to real-world challenges that can make a positive
-              impact. On this website, you can find out more about me and my
-              projects, as well as contact me if you are interested in working
-              with me or collaborating on something exciting.
+              {{ ini_text }}
             </p>
+          </el-col>
+          <el-col :span="1"></el-col>
+          <el-col style="text-align: center;" :span="8">
+            <el-image class="profile-image" :src="p_picture" lazy />
           </el-col>
         </el-row>
       </el-row>
@@ -111,9 +91,10 @@
 import its from "@/assets/company/its.jpg";
 import nextage from "@/assets/company/nextage.jpg";
 import uoc from "@/assets/company/uoc.jpg";
-import p_picture from "@/assets/p_picture.jpg";
+import p_picture from "@/assets/p_picture.png";
 import { useRouter } from "vue-router";
 
+const ini_text = "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile development and innovation. With a solid foundation in software engineering and Industry 4.0, I graduated as a Higher Technician in Computer Science from ITS-ICT in 2021. Currently, I'm pursuing a degree in Computer Science to further expand my knowledge and skills. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
 const router = useRouter();
 const props = defineProps({
   projects: Array,
@@ -199,7 +180,8 @@ p {
 
 .profile-image {
   width: 100%;
-  border-radius: 100%;
+  align-items: center;
+  border-radius: 50%;
   margin-bottom: 20px;
   margin-top: 50px;
   max-height: 200px;
