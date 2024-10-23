@@ -68,3 +68,29 @@
     </p>
   </div>
 </template>
+
+<script setup>
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Ares | Privacy Policy",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Privacy policy for the Ares app, detailing information collection and permissions.",
+    },
+    { property: "og:title", content: "Ares | Privacy Policy" },
+    {
+      property: "og:description",
+      content:
+        "Privacy policy for the Ares app, detailing information collection and permissions.",
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://msartore.dev/projects/ares/privacy",
+    },
+  ],
+});
+</script>

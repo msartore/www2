@@ -147,7 +147,7 @@ const pages = ref([
       },
     ],
   },
-  { index: "2", label: "Donation", path: "/donation" },
+  { index: "2", label: "Donate", path: "/donate" },
   { index: "3", label: "Contact", path: "/contact" },
 ]);
 
