@@ -22,7 +22,7 @@
             </p>
           </el-col>
           <el-col :span="1"></el-col>
-          <el-col style="text-align: center;" :span="8">
+          <el-col style="text-align: center" :span="8">
             <el-image class="profile-image" :src="p_picture" lazy />
           </el-col>
         </el-row>
@@ -106,13 +106,13 @@ const welcome_msg_list = [
 ];
 
 const message = ref("hi, I'm Massimiliano");
-const ini_text = "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile development and innovation. With a solid foundation in software engineering and Industry 4.0, I graduated as a Higher Technician in Computer Science from ITS-ICT in 2021. Currently, I'm pursuing a degree in Computer Science to further expand my knowledge and skills. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
+const ini_text =
+  "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile development and innovation. With a solid foundation in software engineering and Industry 4.0, I graduated as a Higher Technician in Computer Science from ITS-ICT in 2021. Currently, I'm pursuing a degree in Computer Science to further expand my knowledge and skills. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
 const router = useRouter();
 const props = defineProps({
   projects: Array,
   isMobile: Boolean,
 });
-
 
 var messagerWriting = false;
 var currentMessageIndex = -1;
@@ -156,7 +156,7 @@ const ew_list = [
     course_name:
       "Bachelor's degree in Techniques for Software Application Development",
     description:
-      "Bachelor's Degree in Techniques for Software Development, equipped me with the skills to create usable, efficient, and error-free software for various applications. I manage the software creation process through all stages of its life cycle, from requirement definition and design to implementation, maintenance, and upgrades. I excel in communicating and collaborating within development teams, employing agile methods to achieve functionality, quality, and timely delivery. My expertise includes a thorough understanding of the programming languages, tools, and technologies essential for building software across different platforms. Additionally, I am proficient in administering systems, networks, and applications, both locally and in the cloud.",
+      "Bachelor's Degree in Techniques for Software Development, it equipped me with the skills to create usable, efficient, and error-free software for various applications. I gained the skills to follow the software creation process through all stages of its life cycle, from requirement definition and design to implementation, maintenance, and upgrades. I improved the way to facilitating effective communication and collaboration within development teams, by employing agile methods to achieve functionality, quality, and timely delivery. My knowledge includes a comprehensive understanding of the programming languages, tools, and technologies essential for building software across different platforms. Additionally, I have the capabilities in administering systems, networks, and applications, both locally and in the cloud.",
     logo: uoc,
     date: "Feb 2022 - Feb 2025",
   },
