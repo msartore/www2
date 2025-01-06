@@ -9,9 +9,7 @@
   <h3>Email</h3>
   <p>
     For general inquiries, please email me at:
-    <a href="mailto:massimiliano.sartore@protonmail.com" type="primary"
-      >massimiliano.sartore@protonmail.com</a
-    >
+    <a href="mailto:me@msartore.dev" type="primary">me@msartore.dev</a>
   </p>
 </template>
 
