@@ -107,14 +107,14 @@ const welcome_msg_list = [
 
 const message = ref("hi, I'm Massimiliano");
 const ini_text =
-  "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile development and innovation. With a solid foundation in software engineering and Industry 4.0, I graduated as a Higher Technician in Computer Science from ITS-ICT in 2021. Currently, I'm pursuing a degree in Computer Science to further expand my knowledge and skills. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
+  "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile and desktop development. With a solid foundation in software engineering and Industry 4.0, I recently graduated from UOC with a Bachelor's degree in Techniques for Software Application Development. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
 const router = useRouter();
 const props = defineProps({
   projects: Array,
   isMobile: Boolean,
 });
 
-var messagerWriting = false;
+var messengerWriting = false;
 var currentMessageIndex = -1;
 
 function navigateTo(path) {
@@ -122,23 +122,23 @@ function navigateTo(path) {
   window.scrollTo(0, 0);
 }
 
-function messager() {
+function messenger() {
   let currentMessage = welcome_msg_list[currentMessageIndex];
 
-  if (messagerWriting) {
+  if (messengerWriting) {
     if (message.value.length < currentMessage.length) {
       if (message.value == "~")
         message.value = currentMessage[message.value.length - 1];
       else message.value += currentMessage[message.value.length];
     } else {
       setTimeout(() => {
-        messagerWriting = false;
+        messengerWriting = false;
       }, 3000);
     }
   } else {
     if (message.value.length == 1) {
       message.value = "~";
-      messagerWriting = true;
+      messengerWriting = true;
       if (currentMessageIndex == welcome_msg_list.length - 1) {
         currentMessageIndex = 0;
       } else {
@@ -202,7 +202,7 @@ useHead({
 
 onMounted(() => {
   setTimeout(() => {
-    setInterval(messager, 250);
+    setInterval(messenger, 250);
   }, 3000);
 });
 </script>
