@@ -1,14 +1,12 @@
 <template>
-  <h2>Battery Calibrator | Privacy Policy</h2>
+  <h1>ATA-Bridge | Privacy Policy</h1>
   <p>
-    This privacy policy is applicable to the Battery Calibrator app (hereinafter
+    This privacy policy is applicable to the ATA Bridge app (hereinafter
     referred to as "Application") for mobile devices, which was developed by
     Massimiliano Sartore (hereinafter referred to as "Service Provider") as a an
     Ad Supported service. This service is provided "AS IS".
   </p>
-
   <h2>What information does the Application obtain and how is it used?</h2>
-
   <h3>User Provided Information</h3>
   <p>
     The Application acquires the information you supply when you download and
@@ -21,7 +19,6 @@
     contact you from time to time to provide you with important information,
     required notices and marketing promotions.
   </p>
-
   <h3>Automatically Collected Information</h3>
   <p>
     In addition, the Application may collect certain information automatically,
@@ -30,7 +27,6 @@
     mobile operating system, the type of mobile Internet browsers you use, and
     information about the way you use the Application.
   </p>
-
   <h2>
     Does the Application collect precise real time location information of the
     device?
@@ -64,7 +60,6 @@
       </li>
     </ul>
   </div>
-
   <h2>
     Do third parties see and/or have access to information obtained by the
     Application?
@@ -83,14 +78,7 @@
       Application:
     </p>
     <ul>
-      <li>
-        <a
-          href="https://www.google.com/policies/privacy/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Google Play Services</a
-        >
-      </li>
+      <!---->
       <li>
         <a
           href="https://support.google.com/admob/answer/6128543?hl=en"
@@ -123,7 +111,6 @@
     </li>
   </ul>
   <p></p>
-
   <h2>What are my opt-out rights?</h2>
   <p>
     You can halt all collection of information by the Application easily by
@@ -131,20 +118,18 @@
     as may be available as part of your mobile device or via the mobile
     application marketplace or network.
   </p>
-
-  <h3>Data Retention Policy, Managing Your Information</h3>
+  <h2>Data Retention Policy, Managing Your Information</h2>
   <p>
     The Service Provider will retain User Provided data for as long as you use
     the Application and for a reasonable time thereafter. The Service Provider
     will retain Automatically Collected information for up to 24 months and
     thereafter may store it in aggregate. If you'd like the Service Provider to
     delete User Provided Data that you have provided via the Application, please
-    contact them at msartore@tuta.io and we will respond in a reasonable time.
-    Please note that some or all of the User Provided Data may be required in
-    order for the Application to function properly.
+    contact them at ATA Bridge and we will respond in a reasonable time. Please
+    note that some or all of the User Provided Data may be required in order for
+    the Application to function properly.
   </p>
-
-  <h3>Children</h3>
+  <h2>Children</h2>
   <p>
     The Service Provider does not use the Application to knowingly solicit data
     from or market to children under the age of 13.
@@ -157,13 +142,12 @@
       discover that a child under 13 has provided personal information, the
       Service Provider will immediately delete this from their servers. If you
       are a parent or guardian and you are aware that your child has provided us
-      with personal information, please contact the Service Provider
-      (msartore@tuta.io) so that they will be able to take the necessary
-      actions.
+      with personal information, please contact the Service Provider (ATA
+      Bridge) so that they will be able to take the necessary actions.
     </p>
   </div>
   <!---->
-  <h3>Security</h3>
+  <h2>Security</h2>
   <p>
     The Service Provider are concerned about safeguarding the confidentiality of
     your information. The Service Provider provide physical, electronic, and
@@ -174,8 +158,7 @@
     provide reasonable security for information we process and maintain, no
     security system can prevent all potential security breaches.
   </p>
-
-  <h3>Changes</h3>
+  <h2>Changes</h2>
   <p>
     This Privacy Policy may be updated from time to time for any reason. The
     Service Provider will notify you of any changes to the Privacy Policy by
@@ -184,9 +167,8 @@
     approval of all changes.
   </p>
 
-  <p>This privacy policy is effective as of 2024-09-20</p>
-
-  <h3>Your Consent</h3>
+  <p>This privacy policy is effective as of 2025-03-23</p>
+  <h2>Your Consent</h2>
   <p>
     By using the Application, you are giving your consent to the Service
     Provider processing of your information as set forth in this Privacy Policy
@@ -195,12 +177,11 @@
     including, but not limited to, collecting, storing, deleting, using,
     combining and disclosing information.
   </p>
-
   <h2>Contact us</h2>
   <p>
     If you have any questions regarding privacy while using the Application, or
     have questions about the practices, please contact the Service Provider via
-    email at msartore@tuta.io.
+    email at me@msartore.dev.
   </p>
 </template>
 
@@ -208,21 +189,23 @@
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "Privacy Policy | Battery Calibrator",
+  title: "ATA-Bridge | Privacy Policy",
   meta: [
     {
       name: "description",
-      content: "Read the privacy policy for the Battery Calibrator app.",
+      content:
+        "Privacy policy for the ATA-Bridge app, detailing information collection and permissions.",
     },
-    { property: "og:title", content: "Privacy Policy | Battery Calibrator" },
+    { property: "og:title", content: "ATA-Bridge | Privacy Policy" },
     {
       property: "og:description",
-      content: "Read the privacy policy for the Battery Calibrator app.",
+      content:
+        "Privacy policy for the ATA-Bridge app, detailing information collection and permissions.",
     },
     { property: "og:type", content: "website" },
     {
       property: "og:url",
-      content: "https://msartore.dev/projects/battery-calibrator/privacy",
+      content: "https://msartore.dev/projects/ata-bridge/privacy",
     },
   ],
 });

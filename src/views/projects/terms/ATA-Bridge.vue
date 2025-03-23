@@ -1,13 +1,13 @@
 <template>
-  <h2>Battery Calibrator | Terms &amp; Conditions</h2>
-  <br />
+  <h1>ATA-Bridge | Terms &amp; Conditions</h1>
+
   <p>
-    These terms and conditions applies to the Battery Calibrator app (hereby
-    referred to as "Application") for mobile devices that was created by
-    Massimiliano Sartore (hereby referred to as "Service Provider") as an Ad
-    Supported service.
+    These terms and conditions apply to the ATA Bridge app (hereby referred to
+    as "Application") for mobile devices that was created by Massimiliano
+    Sartore (hereby referred to as "Service Provider") as an Ad Supported
+    service.
   </p>
-  <br />
+
   <p>
     Upon downloading or utilizing the Application, you are automatically
     agreeing to the following terms. It is strongly advised that you thoroughly
@@ -19,7 +19,7 @@
     database rights, and other intellectual property rights related to the
     Application remain the property of the Service Provider.
   </p>
-  <br />
+
   <p>
     The Service Provider is dedicated to ensuring that the Application is as
     beneficial and efficient as possible. As such, they reserve the right to
@@ -27,7 +27,7 @@
     reason. The Service Provider assures you that any charges for the
     Application or its services will be clearly communicated to you.
   </p>
-  <br />
+
   <p>
     The Application stores and processes personal data that you have provided to
     the Service Provider in order to provide the Service. It is your
@@ -46,14 +46,7 @@
       Conditions of the third-party service providers used by the Application:
     </p>
     <ul>
-      <li>
-        <a
-          href="https://policies.google.com/terms"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Google Play Services</a
-        >
-      </li>
+      <!---->
       <li>
         <a
           href="https://developers.google.com/admob/terms"
@@ -65,7 +58,7 @@
       <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
     </ul>
   </div>
-  <br />
+
   <p>
     Please be aware that the Service Provider does not assume responsibility for
     certain aspects. Some functions of the Application require an active
@@ -74,7 +67,7 @@
     does not function at full capacity due to lack of access to Wi-Fi or if you
     have exhausted your data allowance.
   </p>
-  <br />
+
   <p>
     If you are using the application outside of a Wi-Fi area, please be aware
     that your mobile network provider's agreement terms still apply.
@@ -87,7 +80,7 @@
     application, they assume that you have obtained permission from the bill
     payer.
   </p>
-  <br />
+
   <p>
     Similarly, the Service Provider cannot always assume responsibility for your
     usage of the application. For instance, it is your responsibility to ensure
@@ -95,7 +88,7 @@
     are unable to access the Service, the Service Provider cannot be held
     responsible.
   </p>
-  <br />
+
   <p>
     In terms of the Service Provider's responsibility for your use of the
     application, it is important to note that while they strive to ensure that
@@ -105,7 +98,7 @@
     you experience as a result of relying entirely on this functionality of the
     application.
   </p>
-  <br />
+
   <p>
     The Service Provider may wish to update the application at some point. The
     application is currently available as per the requirements for the operating
@@ -122,7 +115,15 @@
     licenses granted to you in these terms will end; (b) you must cease using
     the application, and (if necessary) delete it from your device.
   </p>
-  <br />
+
+  <p>
+    Credits earned within the application may be permanently lost if the app
+    data is cleared or the application is uninstalled. Once lost, credits cannot
+    be recovered. The developer assumes no responsibility for any credits lost.
+    Please take this into consideration before removing or resetting the
+    application.
+  </p>
+
   <h2>Changes to These Terms and Conditions</h2>
   <p>
     The Service Provider may periodically update their Terms and Conditions.
@@ -130,13 +131,13 @@
     The Service Provider will notify you of any changes by posting the new Terms
     and Conditions on this page.
   </p>
-  <br />
-  <p>These terms and conditions are effective as of 2024-09-20</p>
-  <br />
+
+  <p>These terms and conditions are effective as of 2025-03-23</p>
+
   <h2>Contact Us</h2>
   <p>
     If you have any questions or suggestions about the Terms and Conditions,
-    please do not hesitate to contact the Service Provider at msartore@tuta.io.
+    please do not hesitate to contact the Service Provider at ATA Bridge.
   </p>
 </template>
 
@@ -144,24 +145,24 @@
 import { useHead } from "@unhead/vue";
 
 useHead({
-  title: "Terms & Conditions | Battery Calibrator",
+  title: "Terms & Conditions | ATA-Bridge",
   meta: [
     {
       name: "description",
-      content: "Read the terms and conditions for the Battery Calibrator app.",
+      content: "Read the terms and conditions for the ATA-Bridge app.",
     },
     {
       property: "og:title",
-      content: "Terms & Conditions | Battery Calibrator",
+      content: "Terms & Conditions | ATA-Bridge",
     },
     {
       property: "og:description",
-      content: "Read the terms and conditions for the Battery Calibrator app.",
+      content: "Read the terms and conditions for the ATA-Bridge app.",
     },
     { property: "og:type", content: "website" },
     {
       property: "og:url",
-      content: "https://msartore.dev/projects/battery-calibrator/terms",
+      content: "https://msartore.dev/projects/ata-bridge/terms",
     },
   ],
 });
