@@ -12,6 +12,8 @@ import BCPrivacy from "../views/projects/privacy/Battery-Calibrator.vue";
 import BCPTerms from "../views/projects/terms/Battery-Calibrator.vue";
 import ATABTerms from "../views/projects/terms/ATA-Bridge.vue";
 import ATABPrivacy from "../views/projects/privacy/ATA-Bridge.vue";
+import ApkmPrivacy from "../views/projects/privacy/Apkm.vue";
+import ApkmTerms from "../views/projects/terms/Apkm.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -25,6 +27,8 @@ const routes = [
   { path: "/projects/battery-calibrator/terms", component: BCPTerms },
   { path: "/projects/ata-bridge/privacy", component: ATABPrivacy },
   { path: "/projects/ata-bridge/terms", component: ATABTerms },
+  { path: "/projects/apkm/privacy", component: ApkmPrivacy },
+  { path: "/projects/apkm/terms", component: ApkmTerms },
   {
     path: "/:catchAll(.*)*",
     component: NotFound,
