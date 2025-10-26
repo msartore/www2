@@ -1,5 +1,5 @@
 <template>
-  <h2>Battery Calibrator | Privacy Policy</h2>
+  <h2>APKM | Privacy Policy</h2>
   <p>
     This privacy policy applies to the APKM app (hereby referred to as
     "Application") for mobile devices that was created by Massimiliano Sartore

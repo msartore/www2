@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Terms & Conditions</h1>
+    <h1>APKM | Terms & Conditions</h1>
     <p>
       These terms and conditions apply to the APKM app (hereby referred to as
       "Application") for mobile devices that was created by Massimiliano Sartore
