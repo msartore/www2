@@ -94,9 +94,9 @@
                 /></svg
             ></a>
           </el-row>
-          <el-row>
+          <el-row style="padding-bottom: 20px">
             <el-text tag="p" style="text-align: center; width: 100%"
-              >Copyright © 2024 Massimiliano Sartore</el-text
+              >Copyright © 2024–{{ new Date().getFullYear() }} Massimiliano Sartore</el-text
             >
           </el-row>
         </el-footer>
@@ -235,6 +235,7 @@ p {
 .footer {
   margin-top: 10%;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .footer a {
