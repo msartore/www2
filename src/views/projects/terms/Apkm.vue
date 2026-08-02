@@ -117,15 +117,6 @@
     </p>
 
     <p>
-      However, the Service Provider retains full liability for:
-    </p>
-    <ul>
-      <li>Death or personal injury caused by negligence</li>
-      <li>Fraud or fraudulent misrepresentation</li>
-      <li>Any other liability that cannot be excluded or limited under applicable law</li>
-    </ul>
-
-    <p>
       To the fullest extent permitted by law, the total liability of the
       Service Provider for any claim shall not exceed the amount paid by you to
       the Service Provider for the Application in the 12 months preceding the
@@ -194,7 +185,7 @@
       <a href="mailto:me@msartore.dev">me@msartore.dev</a>.
     </p>
 
-    <p>These terms and conditions are effective as of 2026-07-18</p>
+    <p>These terms and conditions are effective as of 2026-08-02</p>
 
     <h2>Contact Us</h2>
     <p>
