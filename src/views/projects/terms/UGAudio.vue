@@ -5,8 +5,10 @@
     <p>
       These Terms and Conditions apply to UGAudio (the "Application"), a
       companion application for compatible UGREEN and HiTune Bluetooth audio
-      devices, operated by Massimiliano Sartore (the "Service Provider"). By
-      downloading or using the Application, you agree to these Terms.
+      devices, operated by Massimiliano Sartore (the "Service Provider"). The
+      Application is an independent application and is not affiliated with,
+      sponsored by, or endorsed by UGREEN or HiTune. By downloading or using
+      the Application, you agree to these Terms.
     </p>
 
     <h2>Eligibility</h2>

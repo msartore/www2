@@ -6,6 +6,8 @@
       This Privacy Policy applies to UGAudio (the "Application"), a companion
       application for compatible UGREEN and HiTune Bluetooth audio devices,
       operated by Massimiliano Sartore (the "Service Provider"). The
+      Application is an independent companion application and is not
+      affiliated with, sponsored by, or endorsed by UGREEN or HiTune. The
       Application is provided on an "AS IS" basis and may be supported by
       advertising.
     </p>
