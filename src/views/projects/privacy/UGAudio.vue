@@ -36,45 +36,65 @@
       Bluetooth scanning depending on the operating-system version.
     </p>
 
-    <h2>Third-party services</h2>
+    <h2>Google services (AdMob, Analytics, and Firebase)</h2>
     <p>
-      The Application uses Google services to operate, improve, and support the
-      Application. These services may process device and application
-      identifiers, IP address, approximate location inferred from IP address,
-      operating-system and app-version information, and network information.
-      Google processes this information under its own terms and policies.
+      We use Google services to operate, analyze, improve, and monetize UGAudio.
+      Depending on the service and processing activity, Google may process data
+      on behalf of the Service Provider or as an independent controller. These
+      services may collect and share data with Google to fulfill the purposes
+      described below.
+    </p>
+
+    <h3>Google Analytics and Firebase Analytics</h3>
+    <p>Google Analytics collects and processes:</p>
+    <ul>
+      <li>Approximate location inferred from IP address</li>
+      <li>User IDs, such as App Set ID or Analytics Instance ID</li>
+      <li>App interactions, such as screen views, button taps, and feature usage</li>
+      <li>Other user-generated content, such as custom text parameters associated with app events</li>
+      <li>Device or other IDs, diagnostic data, and performance metrics</li>
+    </ul>
+    <p>
+      This data is processed to generate aggregated usage reports, improve user
+      experience, and ensure app functionality.
     </p>
 
     <h3>Google AdMob</h3>
     <p>
-      AdMob displays advertisements in the Application. Depending on your
-      location and choices, Google may use the advertising ID and related device
-      information to provide personalized or non-personalized advertising,
-      measure ad performance, limit frequency, and prevent fraud. Where
-      required, advertising choices are presented through Google's consent
-      mechanism. You can change those choices in the Application when the
-      consent options are available, and you can reset or delete your
+      AdMob displays advertisements within the Application. To serve
+      personalized or non-personalized ads, measure ad performance, and prevent
+      fraud, AdMob collects and shares data with third parties, including:
+    </p>
+    <ul>
+      <li>Approximate location</li>
+      <li>User IDs and device IDs, including Advertising ID</li>
+      <li>App interactions and performance data</li>
+      <li>Diagnostic and security data used for fraud prevention, security, and compliance</li>
+    </ul>
+    <p>
+      Where required by law, advertising choices are presented through Google's
+      consent mechanism. You can change those choices in the Application when
+      the consent options are available, and you can reset or delete your
       advertising ID in your device settings.
     </p>
 
-    <h3>Firebase Crashlytics</h3>
+    <h3>Firebase Crashlytics and Remote Config</h3>
+    <ul>
+      <li>
+        <strong>Crashlytics:</strong> Collects crash logs, stack traces,
+        diagnostics, and device or installation IDs to identify bugs and ensure
+        app stability. This data is used for app functionality and analytics.
+      </li>
+      <li>
+        <strong>Remote Config:</strong> Processes installation identifiers, app
+        interaction states, diagnostic data, and basic device information to
+        deliver configuration updates and enable specific features. This data
+        is used for app functionality.
+      </li>
+    </ul>
     <p>
-      Crashlytics sends crash and diagnostic information to Google so the
-      Service Provider can identify and fix problems. This may include crash
-      stack traces, device model, operating-system version, app version,
-      installation identifiers, and relevant diagnostic logs. The Application
-      is not intended to include the contents of your audio or Bluetooth data
-      in crash reports.
-    </p>
-
-    <h3>Firebase Remote Config</h3>
-    <p>
-      Remote Config allows the Application to receive configuration values,
-      such as feature availability, compatibility settings, or presentation
-      values, without requiring an application update. Google may process an
-      app installation identifier and basic device, app-version, and network
-      information when configuration is requested. Remote Config is not used
-      to upload your files, audio, or Bluetooth device contents.
+      For more details on how Google processes data, see
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
     </p>
 
     <h2>Legal bases</h2>
@@ -94,11 +114,11 @@
 
     <h2>Sharing and international transfers</h2>
     <p>
-      The Service Provider does not sell your personal data. Google receives
-      the information described above as the provider of AdMob and Firebase
-      services. Google may process information on servers outside your country,
-      including the United States, using transfer mechanisms required by
-      applicable data-protection law.
+      The Service Provider does not sell personal data for money. Google and
+      other recipients may receive the information described above to provide
+      the listed services. Google may process information on servers outside
+      your country, including the United States, using transfer mechanisms
+      required by applicable data-protection law.
     </p>
     <ul>
       <li>
