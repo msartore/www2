@@ -14,6 +14,8 @@ import ATABTerms from "../views/projects/terms/ATA-Bridge.vue";
 import ATABPrivacy from "../views/projects/privacy/ATA-Bridge.vue";
 import ApkmPrivacy from "../views/projects/privacy/Apkm.vue";
 import ApkmTerms from "../views/projects/terms/Apkm.vue";
+import UGAudioPrivacy from "../views/projects/privacy/UGAudio.vue";
+import UGAudioTerms from "../views/projects/terms/UGAudio.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -29,6 +31,8 @@ const routes = [
   { path: "/projects/ata-bridge/terms", component: ATABTerms },
   { path: "/projects/apkm/privacy", component: ApkmPrivacy },
   { path: "/projects/apkm/terms", component: ApkmTerms },
+  { path: "/projects/ug-audio/privacy", component: UGAudioPrivacy },
+  { path: "/projects/ug-audio/terms", component: UGAudioTerms },
   {
     path: "/:catchAll(.*)*",
     component: NotFound,
