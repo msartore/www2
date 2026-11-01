@@ -2,13 +2,19 @@
   <div class="site home">
     <section class="hero">
       <div class="hero-copy">
-        <h1>I build software that talks to devices.</h1>
+        <h1>Android, desktop, web.</h1>
 
         <p class="lead">
-          Android engineer by day, desktop tooling by night. I work on the layer where
-          apps meet hardware — Compose and Kotlin at Verizon Connect, adb and fastboot in
-          my own time — and I ship the results as open source.
+          Three surfaces, one set of habits. Kotlin and Compose in the apps, Rust and Tauri in
+          the tooling, Vue and Vite on the web — the same taste applied at three different
+          altitudes.
         </p>
+
+        <div class="pills">
+          <span class="pill">android</span>
+          <span class="pill">desktop</span>
+          <span class="pill">web</span>
+        </div>
 
         <p class="type-line" aria-live="polite">
           <span class="prompt">~$</span>
@@ -32,8 +38,8 @@
           <dd>Verizon Connect<span>Android Engineer, Android Team Lead</span></dd>
         </div>
         <div>
-          <dt>Focus</dt>
-          <dd>Jetpack Compose<span>Kotlin · adb / fastboot</span></dd>
+          <dt>Range</dt>
+          <dd>Android · desktop · web<span>Kotlin/Compose · Rust/Tauri · Vue</span></dd>
         </div>
         <div>
           <dt>Open to</dt>
@@ -268,21 +274,21 @@ onUnmounted(() => {
 });
 
 useHead({
-  title: "Massimiliano Sartore — Android engineer & open-source developer",
+  title: "Massimiliano Sartore — Android, desktop and web software",
   meta: [
     {
       name: "description",
       content:
-        "Massimiliano Sartore, Android engineer and open-source developer from Italy: Jetpack Compose architecture at Verizon Connect, plus desktop tools for Android devices such as ATA-GUI, Ares and ATA.",
+        "Massimiliano Sartore — software developer from Italy working across Android, desktop and web: Kotlin and Compose in the apps, Rust and Tauri in the desktop tooling, Vue and Vite on this site. Open-source projects such as ATA-GUI, Ares and APKM.",
     },
     {
       property: "og:title",
-      content: "Massimiliano Sartore — Android engineer & open-source developer",
+      content: "Massimiliano Sartore — Android, desktop and web software",
     },
     {
       property: "og:description",
       content:
-        "Android architecture, desktop tooling and open-source projects that talk to devices.",
+        "Android, desktop and web: Compose in the apps, Rust and Tauri in the tooling, Vue on this site — plus open-source projects such as ATA-GUI and Ares.",
     },
     { property: "og:url", content: "https://msartore.dev/" },
     { property: "og:type", content: "website" },
@@ -335,6 +341,7 @@ useHead({
 .hero h1 {
   margin-top: 16px;
   max-width: 19ch;
+  text-wrap: balance;
 }
 
 .hero .lead {

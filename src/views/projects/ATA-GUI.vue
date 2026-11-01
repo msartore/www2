@@ -323,11 +323,10 @@ const platforms = [
   },
   {
     name: "macOS",
-    requirement: "10.15+ · Apple silicon or Intel",
+    requirement: "10.15+ · Apple silicon",
     formats: [
-      { label: "Apple silicon", file: "ATA-GUI_4.0.0_aarch64.dmg" },
-      { label: "Intel", file: "ATA-GUI_4.0.0_x64.dmg" },
-      { label: "Portable", file: "ATA-GUI-4.0.0-portable-macos.zip" },
+      { label: "Installer", file: "ATA-GUI_4.0.0_aarch64.dmg" },
+      { label: "Portable", file: "ATA-GUI-4.0.0-portable-darwin-arm64.zip" },
     ],
   },
 ];
