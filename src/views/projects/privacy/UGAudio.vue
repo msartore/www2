@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <div>
     <h1>UGAudio | Privacy Policy</h1>
 
@@ -12,7 +14,7 @@
       advertising.
     </p>
 
-    <h2>Data Controller</h2>
+    <h1>Data Controller</h1>
     <ul>
       <li>Name: Massimiliano Sartore</li>
       <li>Email: <a href="mailto:me@msartore.dev">me@msartore.dev</a></li>
@@ -181,7 +183,9 @@
       <a href="mailto:me@msartore.dev">me@msartore.dev</a>.
     </p>
   </div>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

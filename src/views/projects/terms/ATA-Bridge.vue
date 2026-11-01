@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <h1>ATA-Bridge | Terms &amp; Conditions</h1>
 
   <p>
@@ -124,7 +126,7 @@
     application.
   </p>
 
-  <h2>Changes to These Terms and Conditions</h2>
+  <h1>Changes to These Terms and Conditions</h1>
   <p>
     The Service Provider may periodically update their Terms and Conditions.
     Therefore, you are advised to review this page regularly for any changes.
@@ -139,7 +141,9 @@
     If you have any questions or suggestions about the Terms and Conditions,
     please do not hesitate to contact the Service Provider at ATA Bridge.
   </p>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

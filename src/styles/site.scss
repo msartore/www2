@@ -1,0 +1,387 @@
+/* ---------------------------------------------------------------- design system
+   Dark-first, mint accent, mono details — the same language as ATA-GUI.
+   Tokens live on :root and flip under html:not(.dark) for the light toggle. */
+
+:root {
+  --bg: #0a0c0d;
+  --panel: #101415;
+  --panel-2: #141a1c;
+  --line: #222a2d;
+  --line-strong: #2e383c;
+  --text: #dfe7ea;
+  --title: #f3f8fa;
+  --dim: #a4b1b6;
+  --mute: #8b989d;
+  --accent: #24e0a4;
+  --accent-ink: #05261c;
+  --accent-wash: rgba(36, 224, 164, 0.08);
+  --danger: #ff6262;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, Menlo, monospace;
+  --wrap: 1040px;
+  --radius: 12px;
+}
+
+html:not(.dark) {
+  --bg: #f5f8f8;
+  --panel: #ffffff;
+  --panel-2: #f0f4f4;
+  --line: #e1e7e7;
+  --line-strong: #cfd8d8;
+  --text: #24302f;
+  --title: #0c1615;
+  --dim: #465655;
+  --mute: #5f6f6e;
+  --accent: #0c9a72;
+  --accent-ink: #ffffff;
+  --accent-wash: rgba(12, 154, 114, 0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------------- layout */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.site {
+  width: 100%;
+  max-width: calc(var(--wrap) + 80px);
+  margin: 0 auto;
+  padding: 48px 40px 24px;
+  font-family: var(--sans);
+}
+
+.site-section {
+  margin-top: 88px;
+}
+
+.site-section:first-child {
+  margin-top: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.eyebrow > span {
+  white-space: nowrap;
+}
+
+.eyebrow .sep {
+  color: var(--line-strong);
+}
+
+/* ---------------------------------------------------------------- type */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--title);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+}
+
+h1 {
+  font-size: clamp(38px, 5.4vw, 66px);
+}
+
+h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+}
+
+h3 {
+  font-size: 17px;
+  letter-spacing: -0.015em;
+}
+
+p {
+  margin: 0;
+  color: var(--dim);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--panel-2);
+  color: var(--accent);
+}
+
+.lead {
+  max-width: 58ch;
+  font-size: clamp(16px, 1.3vw, 17.5px);
+  color: var(--dim);
+}
+
+.muted {
+  color: var(--mute);
+}
+
+/* ---------------------------------------------------------------- buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+
+.btn:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  border-color: transparent;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  filter: brightness(1.06);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+/* ---------------------------------------------------------------- cards */
+.card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.card-hover {
+  transition: border-color 0.16s ease, transform 0.16s ease, background 0.16s ease;
+}
+
+.card-hover:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+  transform: translateY(-2px);
+}
+
+.cells {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cells.is-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cells.is-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ticks {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.ticks li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 7px;
+  border-left: 1.5px solid var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+/* ---------------------------------------------------------------- bits */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mute);
+}
+
+.divider {
+  height: 1px;
+  margin: 64px 0;
+  background: var(--line);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+/* ---------------------------------------------------------------- prose (legal) */
+.prose {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prose h1 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  margin-bottom: 10px;
+}
+
+.prose h2 {
+  margin: 40px 0 12px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.prose h3 {
+  margin: 26px 0 8px;
+  font-size: 15px;
+}
+
+.prose p,
+.prose li {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--dim);
+}
+
+.prose p {
+  margin: 12px 0;
+}
+
+.prose ul,
+.prose ol {
+  margin: 12px 0;
+  padding-left: 22px;
+}
+
+.prose li {
+  margin: 6px 0;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-wash);
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------------- responsive */
+@media (max-width: 900px) {
+  .site {
+    padding: 36px 24px 16px;
+  }
+
+  .cells,
+  .cells.is-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-section {
+    margin-top: 64px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site {
+    padding: 28px 18px 8px;
+  }
+
+  .cells,
+  .cells.is-4,
+  .cells.is-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .divider {
+    margin: 44px 0;
+  }
+}
+
+/* ------------------------------------------------------------------ APKM
+   The product's Signal Orange, deepened on paper where #ff7a2a fails as text. */
+.apkm {
+  --accent: #ff7a2a;
+  --accent-ink: #180800;
+}
+
+html:not(.dark) .apkm {
+  --accent: #b23c00;
+  --accent-ink: #ffffff;
+}
+

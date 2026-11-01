@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <h1>ATA-Bridge | Privacy Policy</h1>
   <p>
     This privacy policy is applicable to the ATA Bridge app (hereinafter
@@ -6,7 +8,7 @@
     Massimiliano Sartore (hereinafter referred to as "Service Provider") as a an
     Ad Supported service. This service is provided "AS IS".
   </p>
-  <h2>What information does the Application obtain and how is it used?</h2>
+  <h1>What information does the Application obtain and how is it used?</h1>
   <h3>User Provided Information</h3>
   <p>
     The Application acquires the information you supply when you download and
@@ -183,7 +185,9 @@
     have questions about the practices, please contact the Service Provider via
     email at me@msartore.dev.
   </p>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <div>
     <h1>APKM | Terms & Conditions</h1>
 
@@ -14,7 +16,7 @@
       Conditions. You should read them carefully before using the Application.
     </p>
 
-    <h2>Eligibility</h2>
+    <h1>Eligibility</h1>
 
     <p>
       By accessing and using this Application, you represent that you are
@@ -310,7 +312,9 @@
     </p>
 
   </div>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

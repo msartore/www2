@@ -1,54 +1,47 @@
 <template>
-  <CommonProject :projectData="project" />
+  <ProjectPage
+    title="ATA"
+    tagline="The command-line tool that started it all: adb and fastboot, wrapped in a script-friendly shell interface."
+    :description="description"
+    :features="features"
+    :links="links"
+    :platforms="['Windows', 'Linux']"
+    license="GPL-3.0"
+    :banner="banner"
+  />
 </template>
 
 <script setup>
-import b from "@/assets/banner3.png";
+import banner from "~/assets/banner3.png";
 import { useHead } from "@unhead/vue";
 
-const project = {
-  banner: b,
-  images: [],
-  buttons: [
-    {
-      label: "Download",
-      link: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool/releases/tag/v0.9.3.10072020W",
-    },
-    {
-      label: "Changelog",
-      link: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool/commits/main/",
-    },
-    {
-      label: "Github repository",
-      link: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool",
-    },
-  ],
-  os_supported: {
-    android: false,
-    windows: true,
-    linux: true,
+const description = `ATA (Advanced Tool for Android) is the original command-line front end for the Android SDK Platform Tools: a shell interface that performs the tasks you would otherwise chain by hand — reading device properties, installing and removing packages, rebooting into recovery or fastboot, pushing and pulling files.
+It is the ancestor of ATA-GUI, kept around for scripts and for anyone who prefers a terminal.`;
+
+const features = [
+  "Read and change device settings, files and properties",
+  "Install, uninstall and restore packages",
+  "Reboot into system, recovery or the bootloader",
+  "Push and pull files over adb",
+  "Powered by the official SDK Platform Tools",
+  "Runs on Windows and Linux, no runtime to install",
+];
+
+const links = [
+  {
+    label: "Download",
+    href: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool/releases/tag/v0.9.3.10072020W",
   },
-  description:
-    "ATA is an app that allows you to perform advanced tasks on your Android device using a shell interface. You can use ATA to access and modify your device's system settings, files, and features. You can also use ATA to install, uninstall, and restore apps on your device. ATA is powered by SDK Platform Tools, which are a set of command-line tools that allow you to communicate with your device and execute various operations. ATA is available for Linux and Windows, and is the app for advanced Android users who want to have more control over their device using a shell.",
-  features: [
-    "Transfer files and text via local network",
-    "Easy client access via App or Browser",
-    "Local server on your device",
-    "Scan for other servers",
-    "Scan QR code with Ares or a QR scanner to easy access the server",
-    "Easy file upload to server from browser",
-  ],
-  terms:
-    `Copyright © 2023–${new Date().getFullYear()} Massimiliano Sartore\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/`,
-};
+  { label: "GitHub", href: "https://github.com/msartore/Advance-Tool-for-Android-ADB-Tool" },
+];
 
 useHead({
-  title: "ATA - Advanced Tool for Android",
+  title: "ATA — advanced tool for Android over adb",
   meta: [
-    { name: "description", content: project.description },
-    { property: "og:title", content: "ATA - Advanced Tool for Android" },
-    { property: "og:description", content: project.description },
-    { property: "og:image", content: project.banner },
+    { name: "description", content: description },
+    { property: "og:title", content: "ATA — advanced tool for Android over adb" },
+    { property: "og:description", content: description },
+    { property: "og:image", content: banner },
     { property: "og:url", content: "https://msartore.dev/projects/ata" },
     { property: "og:type", content: "website" },
   ],

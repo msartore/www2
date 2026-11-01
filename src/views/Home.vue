@@ -1,162 +1,204 @@
 <template>
-  <el-row>
-    <el-col>
-      <el-row>
-        <el-row style="width: 100%" justify="space-between">
-          <h1 v-if="message.length > 0" style="width: 100%" class="name">
-            {{ message }}
-          </h1>
-        </el-row>
-        <el-row v-if="isMobile">
-          <div class="about">
-            <el-image class="profile-image" :src="p_picture" lazy />
-            <p class="bio">
-              {{ ini_text }}
-            </p>
+  <div class="site home">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>I build software that talks to devices.</h1>
+
+        <p class="lead">
+          Android engineer by day, desktop tooling by night. I work on the layer where
+          apps meet hardware — Compose and Kotlin at Verizon Connect, adb and fastboot in
+          my own time — and I ship the results as open source.
+        </p>
+
+        <p class="type-line" aria-live="polite">
+          <span class="prompt">~$</span>
+          <span class="typed">{{ message }}</span>
+          <span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#projects">See the projects</a>
+          <a class="btn" href="mailto:me@msartore.dev">Get in touch</a>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div>
+          <dt>Based in</dt>
+          <dd>Italy</dd>
+        </div>
+        <div>
+          <dt>Now</dt>
+          <dd>Verizon Connect<span>Android Engineer, Android Team Lead</span></dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Jetpack Compose<span>Kotlin · adb / fastboot</span></dd>
+        </div>
+        <div>
+          <dt>Open to</dt>
+          <dd>Freelance<span>and collaborations</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="projects" class="site-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow"><span>01 — Projects</span></p>
+          <h2>Things I ship.</h2>
+        </div>
+        <a class="section-link" href="https://github.com/msartore">All repositories <Icon name="external" :size="10" /></a>
+      </div>
+
+      <div class="projects">
+        <a
+          v-for="project in projectCards"
+          :key="project.label"
+          class="project"
+          :href="project.path"
+          @click.prevent="navigateTo(project.path)"
+        >
+          <span class="project-media">
+            <img :src="project.img" :alt="`${project.label} preview`" loading="lazy" />
+          </span>
+          <span class="project-body">
+            <span class="project-title">{{ project.label }}</span>
+            <span class="project-tagline">{{ project.tagline }}</span>
+          </span>
+          <Icon class="project-arrow" name="arrow" :size="12" />
+        </a>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow"><span>02 — Experience &amp; education</span></p>
+          <h2>Where I have been.</h2>
+        </div>
+      </div>
+
+      <ol class="timeline">
+        <li v-for="item in ew_list" :key="item.course_name" class="role">
+          <div class="role-when">
+            <img v-if="item.logo" class="role-logo" :src="item.logo" :alt="item.company_name" />
+            <span class="role-date">{{ item.date }}</span>
           </div>
-        </el-row>
-        <el-row v-else>
-          <el-col :span="15">
-            <p class="bio">
-              {{ ini_text }}
-            </p>
-          </el-col>
-          <el-col :span="1"></el-col>
-          <el-col style="text-align: center" :span="8">
-            <el-image class="profile-image" :src="p_picture" lazy />
-          </el-col>
-        </el-row>
-      </el-row>
-    </el-col>
-  </el-row>
-  <el-row>
-    <h2>Projects</h2>
-    <el-col style="text-align: center">
-      <el-carousel
-        v-if="isMobile"
-        :interval="4000"
-        indicator-position="outside"
-      >
-        <el-carousel-item
-          v-for="project in props.projects"
-          :key="project.label"
-          @click="navigateTo(project.path)"
-        >
-          <img class="img_carousel" :src="project.img" lazy />
-        </el-carousel-item>
-      </el-carousel>
-      <el-carousel
-        v-else
-        :motion-blur="true"
-        :interval="4000"
-        type="card"
-        style="height: 100%"
-      >
-        <el-carousel-item
-          v-for="project in props.projects"
-          :key="project.label"
-          @click="navigateTo(project.path)"
-        >
-          <img class="img_carousel" :src="project.img" lazy />
-        </el-carousel-item>
-      </el-carousel>
-    </el-col>
-  </el-row>
-  <el-row>
-    <h2>Education & Work Experience</h2>
-    <div class="life">
-      <el-timeline>
-        <el-timeline-item
-          center
-          v-for="item in ew_list"
-          :key="item.course_name"
-          :timestamp="item.date"
-          placement="top"
-        >
-          <el-card>
-            <div class="flex">
-              <img v-if="item.logo" class="company_logo" :src="item.logo" />
-              <h3 style="width: 100%; text-align: center">
-                {{ item.company_name }}
-              </h3>
-            </div>
-            <h4>{{ item.course_name }}</h4>
-            <ul v-if="item.highlights" class="exp-highlights">
-              <li v-for="(point, i) in item.highlights" :key="i" v-html="point" />
+          <div class="role-body">
+            <h3>{{ item.course_name }}</h3>
+            <p class="role-company">{{ item.company_name }}</p>
+            <ul class="role-points">
+              <li v-for="(point, i) in item.highlights.slice(0, 3)" :key="i" v-html="point" />
             </ul>
-          </el-card>
-        </el-timeline-item>
-      </el-timeline>
-    </div>
-  </el-row>
+            <details v-if="item.highlights.length > 3" class="role-more">
+              <summary>Show {{ item.highlights.length - 3 }} more</summary>
+              <ul class="role-points">
+                <li
+                  v-for="(point, i) in item.highlights.slice(3)"
+                  :key="`more-${i}`"
+                  v-html="point"
+                />
+              </ul>
+            </details>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="closing">
+      <div>
+        <h2>Open to interesting problems.</h2>
+        <p>Android architecture, desktop tooling, or anything that has to talk to a device.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mailto:me@msartore.dev">me@msartore.dev</a>
+        <a class="btn" href="https://github.com/msartore">GitHub</a>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
-import its from "@/assets/company/its.jpg";
-import nextage from "@/assets/company/nextage.jpg";
-import uoc from "@/assets/company/uoc.jpg";
-import verizon_connect from "@/assets/company/verizon_connect.svg";
-import p_picture from "@/assets/p_picture.png";
+import its from "~/assets/company/its.jpg";
+import nextage from "~/assets/company/nextage.jpg";
+import uoc from "~/assets/company/uoc.jpg";
+import verizon_connect from "~/assets/company/verizon_connect.svg";
 import { useRouter } from "vue-router";
-import { onMounted, ref } from "vue";
+import Icon from "~/components/Icon.vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useHead } from "@unhead/vue";
 
 const welcome_msg_list = [
   "welcome to my website",
-  "explore my projects!",
-  "do you need to customize your android? check out ATA-GUI!",
-  "feel free to reach out for collaborations!",
+  "explore the projects",
+  "need to customise your Android? try ATA-GUI",
+  "open to collaborations",
 ];
 
+const taglines = {
+  "ATA-GUI": "adb & fastboot, behind one calm window",
+  Ares: "local file sharing, no cloud",
+  APKM: "the APK workbench, on your phone",
+};
+
 const message = ref("hi, I'm Massimiliano");
-const ini_text =
-  "Hello, I'm Massimiliano Sartore, a software developer from Italy with a passion for mobile and desktop development. With a solid foundation in software engineering and Industry 4.0, I recently graduated from UOC with a Bachelor's degree in Techniques for Software Application Development. I enjoy staying up-to-date with the latest technologies and applying them to real-world challenges that can drive positive impact. Through this website, you'll find more information about me, my projects, and get a glimpse into my work.";
 const router = useRouter();
 const props = defineProps({
   projects: Array,
   isMobile: Boolean,
 });
 
-var messengerWriting = false;
-var currentMessageIndex = -1;
+const projectCards = ref([]);
+
+let messageIndex = 0;
+let phase = "holding";
+let holdUntil = Date.now() + 2400;
+let timer = null;
 
 function navigateTo(path) {
   router.push(path);
   window.scrollTo(0, 0);
 }
 
+/**
+ * Typewriter: type the next sentence from empty, hold it, delete it, move on.
+ * Phases are explicit — appending to whatever text was left over produced
+ * words with a stray first letter and a truncated tail.
+ */
 function messenger() {
-  let currentMessage = welcome_msg_list[currentMessageIndex];
+  const target = welcome_msg_list[messageIndex];
 
-  if (messengerWriting) {
-    if (message.value.length < currentMessage.length) {
-      if (message.value == "~")
-        message.value = currentMessage[message.value.length - 1];
-      else message.value += currentMessage[message.value.length];
+  if (phase === "typing") {
+    if (message.value.length < target.length) {
+      message.value = target.slice(0, message.value.length + 1);
     } else {
-      setTimeout(() => {
-        messengerWriting = false;
-      }, 3000);
+      phase = "holding";
+      holdUntil = Date.now() + 2200;
     }
-  } else {
-    if (message.value.length == 1) {
-      message.value = "~";
-      messengerWriting = true;
-      if (currentMessageIndex == welcome_msg_list.length - 1) {
-        currentMessageIndex = 0;
-      } else {
-        currentMessageIndex++;
-      }
-    } else {
-      message.value = message.value.slice(0, -1);
-    }
+    return;
   }
+
+  if (phase === "holding") {
+    if (Date.now() >= holdUntil) phase = "deleting";
+    return;
+  }
+
+  if (message.value.length > 0) {
+    message.value = message.value.slice(0, -1);
+    return;
+  }
+
+  messageIndex = (messageIndex + 1) % welcome_msg_list.length;
+  phase = "typing";
 }
 
 const ew_list = [
   {
     company_name: "Verizon Connect",
-    course_name: "Android Engineer (Team Lead)",
+    course_name: "Android Engineer, Android Team Lead",
     highlights: [
       "<strong>Architecture Modernization:</strong> Leading the core platform's architecture overhaul: migrating UI from <strong>XML to Jetpack Compose (MVVM/MVI)</strong> and replacing legacy reactive patterns with <strong>Kotlin Coroutines</strong>, <strong>Flow</strong>, and <strong>Hilt-based dependency injection</strong>",
       "<strong>Map Platform Overhaul:</strong> Architected the migration of the primary <strong>Google Maps</strong> integration from XML to Compose, rewriting custom clustering, real-time location streaming, and overlay systems as high-performance declarative components shipped to a flagship app with <strong>120,000+ installs</strong>",
@@ -167,12 +209,11 @@ const ew_list = [
       "<strong>Technical Leadership:</strong> Authored <strong>5+ architecture blueprints</strong>, migration guides, and engineering playbooks to unify development patterns, and led design reviews with cross-functional stakeholders to align on technical decisions",
     ],
     logo: verizon_connect,
-    date: "May 2025 - Present",
+    date: "May 2025 — Present",
   },
   {
     company_name: "Universitat Oberta de Catalunya",
-    course_name:
-      "Bachelor's degree in Techniques for Software Application Development",
+    course_name: "BSc, Techniques for Software Application Development",
     highlights: [
       "Comprehensive education covering the full <strong>software development life cycle</strong>: requirements, design, implementation, maintenance, and upgrades",
       "Applied <strong>agile methodologies</strong> for cross-functional collaboration, ensuring quality and timely delivery",
@@ -180,7 +221,7 @@ const ew_list = [
       "Experience administering systems, networks, and applications both locally and in the <strong>cloud</strong>",
     ],
     logo: uoc,
-    date: "Feb 2022 - Feb 2025",
+    date: "Feb 2022 — Feb 2025",
   },
   {
     company_name: "Nextage S.R.L.",
@@ -192,11 +233,10 @@ const ew_list = [
       "Collaborated in cross-functional teams to deliver <strong>user-friendly, efficient, and patient-centric</strong> solutions",
     ],
     logo: nextage,
-    date: "Apr 2021 - Dec 2021",
+    date: "Apr 2021 — Dec 2021",
   },
   {
-    company_name:
-      "Istituto Tecnico Superiore per le Tecnologie dell'Informazione e della Comunicazione",
+    company_name: "ITS per le Tecnologie dell'Informazione e della Comunicazione",
     course_name: "Development of Software Systems for Industry 4.0",
     highlights: [
       "Specialized in analyzing, designing, developing, and managing <strong>software and hardware systems</strong> for <strong>Industry 4.0</strong>",
@@ -204,116 +244,368 @@ const ew_list = [
       "Implemented <strong>application security and data protection</strong> best practices, ensuring robust data safeguarding",
     ],
     logo: its,
-    date: "2019 - 2021",
+    date: "2019 — 2021",
   },
 ];
 
+onMounted(() => {
+  projectCards.value = (props.projects ?? []).map((project) => ({
+    ...project,
+    tagline: taglines[project.label] ?? "Open source",
+  }));
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) {
+    message.value = "open to collaborations";
+    return;
+  }
+
+  timer = setInterval(messenger, 70);
+});
+
+onUnmounted(() => {
+  if (timer) clearTimeout(timer);
+});
+
 useHead({
-  title: "Massimiliano Sartore - Software Developer",
+  title: "Massimiliano Sartore — Android engineer & open-source developer",
   meta: [
     {
       name: "description",
       content:
-        "Massimiliano Sartore, a software developer and tech enthusiast, shares my projects and insights on technology. Explore my work, learn about my journey, and get in touch.",
+        "Massimiliano Sartore, Android engineer and open-source developer from Italy: Jetpack Compose architecture at Verizon Connect, plus desktop tools for Android devices such as ATA-GUI, Ares and ATA.",
     },
     {
       property: "og:title",
-      content: "Massimiliano Sartore - Software Developer",
+      content: "Massimiliano Sartore — Android engineer & open-source developer",
     },
     {
       property: "og:description",
-      content: "Massimiliano Sartore, a software developer and tech enthusiast",
+      content:
+        "Android architecture, desktop tooling and open-source projects that talk to devices.",
     },
     { property: "og:url", content: "https://msartore.dev/" },
     { property: "og:type", content: "website" },
   ],
 });
-
-onMounted(() => {
-  setTimeout(() => {
-    setInterval(messenger, 250);
-  }, 3000);
-});
 </script>
 
-<style lang="scss">
-.bio {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  margin: 0px;
+<style scoped lang="scss">
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 264px;
+  gap: 56px;
+  align-items: start;
+  padding-top: 24px;
 }
 
-.about {
+.facts {
+  display: grid;
+  gap: 18px;
+  margin: 16px 0 0;
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.facts dd {
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.facts dd span {
   display: block;
-  text-align: center;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mute);
 }
 
-.name {
-  font-size: clamp(1rem, 5vw, 5rem);
-  text-align: center;
-  color: var(--ep-color-primary);
+.hero h1 {
+  margin-top: 16px;
+  max-width: 19ch;
 }
 
-.company_logo {
-  width: 48px;
-  height: 48px;
-  box-sizing: border-box;
-  background-clip: content-box;
+.hero .lead {
+  margin-top: 22px;
 }
 
-.exp-highlights {
-  margin: 8px 0 0 16px;
+.type-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 18px;
+  margin-top: 26px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--mute);
+}
+
+.type-line .prompt {
+  color: var(--accent);
+}
+
+.type-line .typed {
+  color: var(--dim);
+}
+
+.caret {
+  width: 7px;
+  height: 14px;
+  background: var(--accent);
+  transform: translateY(2px);
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.section-link {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--mute);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.section-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.project {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 14px;
+  padding: 12px 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.project:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+  transform: translateY(-2px);
+}
+
+.project-media {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  aspect-ratio: 16 / 10;
+  background: var(--bg);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-body {
+  display: grid;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+.project-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--title);
+  letter-spacing: -0.01em;
+}
+
+.project-tagline {
+  font-size: 12.5px;
+  color: var(--mute);
+}
+
+.project-arrow {
+  justify-self: end;
+  padding: 0 8px 4px;
+  color: var(--mute);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.project:hover .project-arrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.timeline {
+  display: grid;
+  gap: 2px;
+  margin: 0;
   padding: 0;
-  text-align: justify;
+  list-style: none;
+  border-top: 1px solid var(--line);
 }
 
-.exp-highlights li {
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--ep-text-color-regular);
+.role {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 28px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.exp-highlights li strong {
-  color: var(--ep-text-color-primary);
+.role-when {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.role-date {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mute);
+  white-space: nowrap;
+}
+
+.role-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 5px;
+  opacity: 0.85;
+}
+
+.role-company {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+}
+
+.role-points {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.role-points li {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--dim);
+}
+
+.role-points :deep(strong) {
+  color: var(--text);
   font-weight: 700;
 }
 
-.img_carousel {
-  object-fit: contain;
-  height: 100%;
-  width: 70%;
+.role-more {
+  margin-top: 10px;
 }
 
-.flex {
+.role-more summary {
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  list-style: none;
+}
+
+.role-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.role-more[open] summary {
+  display: none;
+}
+
+.role-more[open] {
+  margin-top: 6px;
+}
+
+.closing {
   display: flex;
-}
-
-h2 {
-  margin-top: 10%;
-}
-
-p {
-  text-align: justify;
-}
-
-.profile-image {
-  width: 100%;
+  flex-wrap: wrap;
   align-items: center;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  max-height: 200px;
-  max-width: 200px;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 34px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
 }
 
-.ep-carousel__mask {
-  background-color: transparent;
+.closing h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
 }
 
-.life {
-  width: 100%;
-  display: grid;
-  justify-items: center;
+.closing p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.closing .btn-row {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 0;
+    padding-top: 22px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .role {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 620px) {
+  .projects {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .closing {
+    padding: 24px;
+  }
 }
 </style>

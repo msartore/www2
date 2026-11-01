@@ -1,150 +1,104 @@
 <template>
   <el-config-provider namespace="ep">
-    <div class="common-layout">
-      <el-container>
-        <header class="navbar">
-          <el-row class="navbar-smartphone" v-if="isMobile">
-            <a @click="toggleMenu" class="menu-icon">
-              <svg
-                v-if="isMenuOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="30px"
-                height="30px"
-                stroke-width="1.5"
-                fill="currentColor"
-              >
-                <path
-                  d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
-                ></path>
-              </svg>
-              <svg
-                v-else
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="30px"
-                height="30px"
-                fill="currentColor"
-              >
-                <path
-                  d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"
-                ></path>
-              </svg>
-            </a>
-            <img @click="navigateHome" class="logo" :src="favicon" />
-          </el-row>
-          <BaseHeader
-            v-else
-            :currentPage="currentPage"
-            :pages="pages"
-            @navigate-to="navigateTo"
-          />
-          <BaseSide
-            v-if="isMenuOpen && isMobile"
-            :currentPage="currentPage"
-            :pages="pages"
-            @close-menu="toggleMenu"
-            @navigate-to="navigateTo"
-          />
-        </header>
-        <main>
-          <div class="main-container">
-            <RouterView :isMobile="isMobile" :projects="pages[0].items" />
-          </div>
-        </main>
-        <el-footer class="footer">
-          <hr />
-          <el-row justify="center">
-            <a href="https://github.com/msartore"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.30-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                /></svg
-            ></a>
-            <a href="https://www.linkedin.com/in/massimilianosartore/"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                class="bi bi-linkedin"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.307 1.248h.016zm4.908 8.212V9.359c0-.216.016-.430.08-.586.173-.431.568-.878 1.230-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
-                /></svg
-            ></a>
-            <a href="https://x.com/msartore_"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                class="bi bi-twitter"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.303 2.145H2.865z"
-                /></svg
-            ></a>
-          </el-row>
-          <el-row style="padding-bottom: 20px">
-            <el-text tag="p" style="text-align: center; width: 100%"
-              >Copyright © 2024–{{ new Date().getFullYear() }} Massimiliano Sartore</el-text
-            >
-          </el-row>
-        </el-footer>
-      </el-container>
+    <div class="app-shell">
+      <BaseHeader
+        v-if="!isMobile"
+        :currentPage="currentPage"
+        :pages="pages"
+        @navigate-to="navigateTo"
+      />
+
+      <div v-else class="mobile-bar">
+        <button
+          class="icon-btn"
+          type="button"
+          :aria-expanded="isMenuOpen"
+          aria-label="Menu"
+          @click="toggleMenu"
+        >
+          <Icon :name="isMenuOpen ? 'close' : 'menu'" :size="15" />
+        </button>
+        <a class="mobile-brand" href="/" @click.prevent="navigateHome">msartore.dev</a>
+        <button class="icon-btn" type="button" @click="changeDark" aria-label="Toggle theme">
+          <Icon :name="isDark ? 'sun' : 'moon'" :size="14" />
+        </button>
+      </div>
+
+      <MobileMenu
+        :open="isMenuOpen"
+        :current="currentPage"
+        :pages="pages"
+        @close="toggleMenu"
+        @navigate="navigateToPath"
+      />
+
+      <main>
+        <RouterView :isMobile="isMobile" :projects="pages[0].items" />
+      </main>
+
+      <footer class="foot">
+        <div class="foot-inner">
+          <p>© 2024–{{ year }} Massimiliano Sartore</p>
+          <nav class="foot-links">
+            <a href="https://github.com/msartore">GitHub</a>
+            <a href="https://www.linkedin.com/in/massimilianosartore/">LinkedIn</a>
+            <a href="https://x.com/msartore_">X</a>
+            <a href="mailto:me@msartore.dev">Email</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   </el-config-provider>
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useRouter } from "vue-router";
-import favicon from "@/assets/favicon.png";
-import banner1 from "@/assets/banner1.png";
-import banner4 from "@/assets/banner4.png";
-import banner3 from "@/assets/banner3.png";
+import banner1 from "~/assets/banner1.png";
+import banner4 from "~/assets/banner4.png";
+import bannerApkm from "~/assets/banner-apkm.png";
+import Icon from "~/components/Icon.vue";
+import MobileMenu from "~/components/MobileMenu.vue";
+import { isDark, toggleDark } from "~/composables";
 
+const year = new Date().getFullYear();
 const windowWidth = ref(window.innerWidth);
-const onWidthChange = () => (windowWidth.value = window.innerWidth);
+const onWidthChange = () => {
+  windowWidth.value = window.innerWidth;
+  // a drawer left open while the window grows would sit over the desktop layout
+  if (windowWidth.value >= 850) isMenuOpen.value = false;
+};
 const isMenuOpen = ref(false);
-const isMobile = computed(() => {
-  if (windowWidth.value < 850) return true;
-  else return false;
-});
+const isMobile = computed(() => windowWidth.value < 850);
 const router = useRouter();
 const currentPage = ref("0");
+
+const PAGE_BY_PATH = {
+  "/": "0",
+  "/projects/ata-gui": "1-0",
+  "/projects/ares": "1-1",
+  "/projects/apkm": "1-2",
+  "/projects/ata": "1-3",
+  "/donate": "2",
+  "/contact": "3",
+};
+
+watch(
+  () => router.currentRoute.value.path,
+  (path) => {
+    currentPage.value = PAGE_BY_PATH[path] ?? "0";
+  },
+  { immediate: true }
+);
+
 const pages = ref([
   {
     index: "1",
     label: "Projects",
     items: [
-      {
-        label: "ATA-GUI",
-        path: "/projects/ata-gui",
-        index: "0",
-        img: banner1,
-      },
-      {
-        label: "Ares",
-        path: "/projects/ares",
-        index: "1",
-        img: banner4,
-      },
-      {
-        label: "ATA",
-        path: "/projects/ata",
-        index: "2",
-        img: banner3,
-      },
+      { label: "ATA-GUI", path: "/projects/ata-gui", index: "0", img: banner1 },
+      { label: "Ares", path: "/projects/ares", index: "1", img: banner4 },
+      { label: "APKM", path: "/projects/apkm", index: "2", img: bannerApkm },
     ],
   },
   { index: "2", label: "Donate", path: "/donate" },
@@ -154,96 +108,141 @@ const pages = ref([
 function navigateHome() {
   router.push("/");
   isMenuOpen.value = false;
+  window.scrollTo(0, 0);
 }
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
 
+function changeDark() {
+  toggleDark();
+}
+
+function navigateToPath(path) {
+  router.push(path);
+  isMenuOpen.value = false;
+  window.scrollTo(0, 0);
+}
+
 function navigateTo(index) {
   if (index === "0") navigateHome();
   else if (index.includes("-")) {
-    let iS = index.split("-");
-    router.push(
-      pages.value
-        .find((it) => it.index == iS[0])
-        ?.items.find((it) => it.index == iS[1]).path
-    );
-  } else router.push(pages.value.find((it) => it.index == index).path);
+    const [parent, child] = index.split("-");
+    const path = pages.value
+      .find((it) => it.index === parent)
+      ?.items.find((it) => it.index === child)?.path;
+    if (path) router.push(path);
+  } else {
+    const page = pages.value.find((it) => it.index === index);
+    if (page?.path) router.push(page.path);
+    else if (index === "2") router.push("/donate");
+    else if (index === "3") router.push("/contact");
+  }
 
   isMenuOpen.value = false;
+  window.scrollTo(0, 0);
 }
 
-onMounted(() => window.addEventListener("resize", onWidthChange));
+onMounted(() => {
+  window.addEventListener("resize", onWidthChange);
+  if (!isDark.value) toggleDark();
+});
 onUnmounted(() => window.removeEventListener("resize", onWidthChange));
 </script>
 
 <style lang="scss" scoped>
-.menu-icon {
-  position: absolute;
-  left: 10px;
-  height: 35px;
-}
-
-.logo {
-  width: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.navbar-smartphone {
-  height: 100%;
+.app-shell {
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
+  background: var(--bg);
 }
 
 main {
-  margin: 50px;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
+  flex: 1 1 auto;
+  padding-top: 58px;
 }
 
-.hamburger {
-  margin-left: 10px;
-  position: absolute;
-  align-content: center;
-  height: 100%;
-  color: var(--ep-text-color-primary);
-}
-
-.main-container {
-  max-width: 1000px;
-  width: max-content;
-}
-
-.navbar {
+.mobile-bar {
   position: fixed;
-  height: 60px;
-  width: 100%;
-  z-index: 1000;
-  background-color: var(--ep-bg-color);
-  border-bottom: solid 1px var(--ep-menu-border-color);
+  inset: 0 0 auto;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px);
 }
 
-p {
-  text-align: justify;
+.mobile-brand {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--dim);
+  text-decoration: none;
 }
 
-.footer {
-  margin-top: 10%;
-  width: 100%;
-  padding-bottom: 20px;
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
 }
 
-.footer a {
-  color: var(--ep-text-color-primary);
-  margin: 8px;
+.foot {
+  margin-top: 96px;
+  border-top: 1px solid var(--line);
 }
 
-svg {
-  height: 100%;
+.foot-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  max-width: calc(var(--wrap) + 80px);
+  margin: 0 auto;
+  padding: 26px 40px 34px;
+}
+
+.foot p {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--mute);
+}
+
+.foot-links {
+  display: flex;
+  gap: 18px;
+}
+
+.foot-links a {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--mute);
+  text-decoration: none;
+}
+
+.foot-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  main {
+    padding-top: 54px;
+  }
+
+  .foot-inner {
+    padding: 22px 20px 28px;
+  }
 }
 </style>

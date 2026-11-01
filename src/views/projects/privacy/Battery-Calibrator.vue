@@ -1,5 +1,7 @@
 <template>
-  <h2>Battery Calibrator | Privacy Policy</h2>
+  <div class="site legal">
+    <div class="prose">
+  <h1>Battery Calibrator | Privacy Policy</h1>
   <p>
     This privacy policy is applicable to the Battery Calibrator app (hereinafter
     referred to as "Application") for mobile devices, which was developed by
@@ -202,7 +204,9 @@
     have questions about the practices, please contact the Service Provider via
     email at msartore@tuta.io.
   </p>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

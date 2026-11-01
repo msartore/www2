@@ -1,50 +1,44 @@
 <template>
-  <CommonProject :projectData="project" />
+  <ProjectPage
+    title="Ares"
+    tagline="Share files between the phone and any browser on the network — no cable, no cloud, no account."
+    :description="description"
+    :features="features"
+    :links="links"
+    :platforms="['Android 8+']"
+    license="GPL-3.0"
+    :banner="banner"
+  />
 </template>
 
 <script setup>
-import b from "@/assets/banner4.png";
+import banner from "~/assets/banner4.png";
 import { useHead } from "@unhead/vue";
 
-const project = {
-  banner: b,
-  images: [],
-  buttons: [
-    {
-      label: "Google Play",
-      link: "https://play.google.com/store/apps/details?id=dev.msartore.ares",
-    },
-    {
-      label: "Github repository",
-      link: "https://github.com/msartore/Ares",
-    },
-  ],
-  os_supported: {
-    android: true,
-    windows: false,
-    linux: false,
-  },
-  description:
-    "Ares is an app that makes file sharing fast and convenient. You can use Ares to send and receive files from any device on your local network without using the internet. You can create your own server or join others with a simple scan. You can also access the server from your app or browser and upload files with ease. Ares is the app for file sharing via local network.",
-  features: [
-    "Transfer files and text via local network",
-    "Easy client access via App or Browser",
-    "Local server on your device",
-    "Scan for other servers",
-    "Scan QR code with Ares or a QR scanner to easy access the server",
-    "Easy file upload to server from browser",
-  ],
-  terms:
-    `Copyright © 2024–${new Date().getFullYear()} Massimiliano Sartore\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\nYou should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/`,
-};
+const description = `Ares starts a small file server on the phone and hands you a URL. Any device on the same Wi-Fi — another phone, a laptop, a tablet — can open it in a browser and drag files in, or reach it through the Ares app itself.
+Nothing leaves the local network: transfers go straight from one device to the other, at LAN speed, for as long as both are connected.`;
+
+const features = [
+  "Transfer files and text over the local network",
+  "Open the server from the app or from any browser",
+  "Run the server on the device you are sharing from",
+  "Discover other Ares servers on the network",
+  "Pair by scanning a QR code instead of typing an address",
+  "Upload straight from the browser, with no client to install",
+];
+
+const links = [
+  { label: "Google Play", href: "https://play.google.com/store/apps/details?id=dev.msartore.ares" },
+  { label: "GitHub", href: "https://github.com/msartore/Ares" },
+];
 
 useHead({
-  title: "Ares - Fast Local File Sharing App",
+  title: "Ares — local file sharing for Android",
   meta: [
-    { name: "description", content: project.description },
-    { property: "og:title", content: "Ares - Fast Local File Sharing App" },
-    { property: "og:description", content: project.description },
-    { property: "og:image", content: project.banner },
+    { name: "description", content: description },
+    { property: "og:title", content: "Ares — local file sharing for Android" },
+    { property: "og:description", content: description },
+    { property: "og:image", content: banner },
     { property: "og:url", content: "https://msartore.dev/projects/ares" },
     { property: "og:type", content: "website" },
   ],

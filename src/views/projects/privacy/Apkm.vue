@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <div>
     <h1>APKM | Privacy Policy</h1>
 
@@ -10,7 +12,7 @@
       ad-supported service and is intended for use "AS IS".
     </p>
 
-    <h2>Data Controller Information</h2>
+    <h1>Data Controller Information</h1>
 
     <p>
       Massimiliano Sartore acts as the Data Controller responsible for the
@@ -602,7 +604,9 @@
     </ul>
 
   </div>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

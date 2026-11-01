@@ -1,4 +1,6 @@
 <template>
+  <div class="site legal">
+    <div class="prose">
   <div>
     <h1>UGAudio | Terms &amp; Conditions</h1>
 
@@ -11,7 +13,7 @@
       the Application, you agree to these Terms.
     </p>
 
-    <h2>Eligibility</h2>
+    <h1>Eligibility</h1>
     <p>
       You must be legally permitted to use the Application in your jurisdiction.
       The Application is not directed to children under 16, or the higher age
@@ -129,7 +131,9 @@
 
     <p>These Terms are effective as of 2026-08-29.</p>
   </div>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

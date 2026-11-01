@@ -6,6 +6,7 @@ import Donate from "../views/Donate.vue";
 import Atagui from "../views/projects/ATA-GUI.vue";
 import Ata from "../views/projects/ATA.vue";
 import Ares from "../views/projects/Ares.vue";
+import Apkm from "../views/projects/APKM.vue";
 import NotFound from "../views/NotFound.vue";
 import AresPrivacy from "../views/projects/privacy/Ares.vue";
 import BCPrivacy from "../views/projects/privacy/Battery-Calibrator.vue";
@@ -23,6 +24,7 @@ const routes = [
   { path: "/projects/ata-gui", component: Atagui },
   { path: "/projects/ata", component: Ata },
   { path: "/projects/ares", component: Ares },
+  { path: "/projects/apkm", component: Apkm },
   { path: "/donate", component: Donate },
   { path: "/projects/ares/privacy", component: AresPrivacy },
   { path: "/projects/battery-calibrator/privacy", component: BCPrivacy },

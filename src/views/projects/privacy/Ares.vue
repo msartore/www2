@@ -1,5 +1,7 @@
 <template>
-  <h2>Ares | Privacy Policy</h2>
+  <div class="site legal">
+    <div class="prose">
+  <h1>Ares | Privacy Policy</h1>
   <p>
     Massimiliano Sartore built the Ares app as an Open Source application. This
     Application is provided by Massimiliano Sartore at no cost and is intended
@@ -65,7 +67,9 @@
     If you have any questions or suggestions about my Privacy Policy, do not
     hesitate to contact me at me@msartore.dev.
   </p>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";

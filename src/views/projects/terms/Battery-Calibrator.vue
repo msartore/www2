@@ -1,5 +1,7 @@
 <template>
-  <h2>Battery Calibrator | Terms &amp; Conditions</h2>
+  <div class="site legal">
+    <div class="prose">
+  <h1>Battery Calibrator | Terms &amp; Conditions</h1>
   <br />
   <p>
     These terms and conditions applies to the Battery Calibrator app (hereby
@@ -138,7 +140,9 @@
     If you have any questions or suggestions about the Terms and Conditions,
     please do not hesitate to contact the Service Provider at msartore@tuta.io.
   </p>
-</template>
+    </div>
+  </div>
+  </template>
 
 <script setup>
 import { useHead } from "@unhead/vue";
