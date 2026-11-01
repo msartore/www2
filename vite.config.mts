@@ -14,14 +14,14 @@ import {
   transformerVariantGroup,
 } from "unocss";
 
-const pathSrc = path.resolve(__dirname, "src");
+const pathSrc = path.resolve(import.meta.dirname, "src");
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
       "~/": `${pathSrc}/`,
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(import.meta.dirname, "src"),
     },
   },
   css: {

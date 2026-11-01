@@ -24,4 +24,4 @@ Vue 3 SPA (Vite 8 + Element Plus + UnoCSS) for msartore.dev, deployed to GitHub 
 - Aliases: `~/` → `src/` works in both Vite and `tsconfig.json`; `@` → `src/` is Vite-only, so `@/...` imports in TS-typed files fail `vue-tsc`. Prefer `~/`.
 - CI workflows (`.github/workflows/`) pin Node 14/16 and actions v2 while the repo requires Node ≥20.19 (`.node-version` = 22.14.0; Vite 8 needs `^20.19`). They predate the Vite 8 upgrade and can't pass — verify with local `npm run typecheck`, not CI.
 - `vue-tsc` only covers `src/**/*.ts|.d.ts|.tsx|.vue`; the plain-JS router and `<script setup>` logic are not typechecked.
-- `.npmrc` sets pnpm flags (`shamefully-hoist`, `strict-peer-dependencies`) but npm is actually in use.
+- Package manager is npm (`package-lock.json`); there is deliberately no `.npmrc`, because the pnpm-only keys that used to live there (`shamefully-hoist`, `strict-peer-dependencies`) make npm print an "Unknown project config" warning on every command.
