@@ -68,16 +68,15 @@ const paragraphs = props.description.split("\n").filter(Boolean);
 
 <style scoped lang="scss">
 .project-hero {
-  padding-top: 24px;
+  padding-top: 40px;
 }
 
 .project-hero h1 {
-  margin-top: 18px;
   max-width: 18ch;
 }
 
 .project-hero .lead {
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
 .project-banner {
@@ -127,7 +126,7 @@ const paragraphs = props.description.split("\n").filter(Boolean);
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 28px 32px;
+  padding: 30px 34px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--panel);
@@ -138,7 +137,7 @@ const paragraphs = props.description.split("\n").filter(Boolean);
 }
 
 .closing p {
-  margin-top: 6px;
+  margin-top: 8px;
   font-family: var(--mono);
   font-size: 11px;
   color: var(--mute);
@@ -149,6 +148,10 @@ const paragraphs = props.description.split("\n").filter(Boolean);
 }
 
 @media (max-width: 900px) {
+  .project-hero {
+    padding-top: 24px;
+  }
+
   .project-body {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;

@@ -13,10 +13,10 @@ Vue 3 SPA (Vite 8 + Element Plus + UnoCSS) for msartore.dev, deployed to GitHub 
 ## Wiring
 
 - Routes are hand-maintained in `src/router/index.js` (plain JS, not TS). To add a page: create the view under `src/views/`, register it in the router, and add it to the `pages` nav array in `src/App.vue`. The `/:catchAll(.*)*` route serves `NotFound.vue`.
-- Element Plus components and `src/components/*.vue` (`BaseHeader`, `BaseSide`, `CommonProject`) are auto-imported by unplugin-vue-components — never import them manually. `src/components.d.ts` is generated automatically; don't edit it.
+- Element Plus components and `src/components/*.vue` (`BaseHeader`, `MobileMenu`, `Icon`, `ProjectPage`) are auto-imported by unplugin-vue-components — never import them manually. `src/components.d.ts` is generated automatically; don't edit it.
 - Element Plus runs under a custom CSS namespace `ep`, so theme vars are `var(--ep-*)` (e.g. `--ep-bg-color`). Color overrides are in `src/styles/element/index.scss` + `dark.scss`; that stylesheet is `@use`-injected into *every* SCSS block via `css.preprocessorOptions.scss.additionalData` in `vite.config.mts`.
 - UnoCSS is configured inline in `vite.config.mts` (there is no `unocss.config.ts`): presets uno/attributify/icons, with directives + variant-group transformers. Icons come from `@iconify-json/ep`.
-- Project pages render through the shared `CommonProject.vue` (large; check it before adding new project pages).
+- Project pages render through the shared `ProjectPage.vue` (Ares, ATA) or as standalone views (ATA-GUI, APKM, OpenColorHub). Both kinds inherit `src/styles/project.scss`, which owns the project-page skeleton: type scale, hero rhythm, `.hints`, `.shot`/`figcaption`, `.strip`, `.feature` rows, `.cell` cards, `.install`/`.platform*`, `.faq`, `.closing`, `.legal`. A page's own `<style scoped>` block keeps only what is specific to its layout (phone frames, pair media, grid variants) — re-declaring skeleton rules there is what let the type scale drift between pages; `src/styles/site.scss` holds the tokens and the home-page primitives.
 - Dark mode (`src/composables/dark.ts`) uses `@vueuse/core`, which is only a transitive dependency (pulled in via element-plus) and is not declared in `package.json`.
 
 ## Gotchas

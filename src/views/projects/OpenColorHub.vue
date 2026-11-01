@@ -190,12 +190,12 @@
 
     <!-- ------------------------------------------------------------ install -->
     <section id="install" class="site-section">
-      <div class="section-head">
+      <div class="install-head">
         <div>
           <p class="eyebrow">06 — Download</p>
           <h2>Install</h2>
         </div>
-        <p class="install-lead">
+        <p>
           Both architectures are x64. The portable zip keeps <code>config/</code> and
           <code>data/</code> beside the executable, so it travels on a stick with its settings.
         </p>
@@ -240,12 +240,10 @@
     </section>
 
     <!-- ------------------------------------------------------------ closing -->
-    <div class="divider"></div>
-
     <section class="closing">
       <div>
         <h2>Cool, and lit.</h2>
-        <p>Download the build for your platform, answer the prompts, and the window fills itself.</p>
+        <p>GPL-3.0-only · © 2024–{{ year }} Massimiliano Sartore</p>
       </div>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://github.com/msartore/OpenColorHub/releases/latest">
@@ -257,9 +255,9 @@
 
     <footer class="legal">
       <p>
-        GPL-3.0-only · © 2024–{{ year }} Massimiliano Sartore. The upstream colorctl portions
-        are MIT; the embedded PawnIO module is LGPL. Colorful and iGame are trademarks of their
-        owners — this project is not affiliated with Colorful Technology.
+        The upstream colorctl portions are MIT; the embedded PawnIO module is LGPL. Colorful and
+        iGame are trademarks of their owners — this project is not affiliated with Colorful
+        Technology.
       </p>
     </footer>
   </div>
@@ -449,381 +447,14 @@ useHead({
 </script>
 
 <style scoped lang="scss">
-.och :deep(code) {
-  font-family: var(--mono);
-  font-size: 0.92em;
-  padding: 1px 5px;
-  border-radius: 5px;
-  background: var(--accent-wash);
-  color: var(--accent);
-}
-
-/* ------------------------------------------------------------------ hero */
-.hero {
-  padding-top: 40px;
-}
-
-.hero h1 {
-  text-wrap: balance;
-}
-
-.hero .lead {
-  margin-top: 22px;
-}
-
-.btn-note {
-  padding-left: 10px;
-  border-left: 1px solid color-mix(in srgb, currentColor 32%, transparent);
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  opacity: 0.72;
-}
-
-.hints {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 22px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--mute);
-}
-
-.hints li::before {
-  content: "";
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--line-strong);
-  vertical-align: 2px;
-}
-
-/* ------------------------------------------------------------------ shots */
-.shot {
-  margin: 0;
-}
-
-.shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  box-shadow: 0 30px 80px -46px rgba(0, 0, 0, 0.85);
-}
-
-.hero-shot {
-  margin-top: 46px;
-}
-
-figcaption {
-  margin-top: 14px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  line-height: 1.6;
-  color: var(--mute);
-}
-
-/* ------------------------------------------------------------------ strip */
-.strip {
-  margin-top: 72px;
-  padding-top: 26px;
-  border-top: 1px solid var(--line);
-}
-
-.strip p {
-  max-width: 82ch;
-  font-size: 14px;
-  color: var(--mute);
-}
-
-.strip strong {
-  color: var(--text);
-}
-
-.strip a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent-wash);
-}
-
-/* ------------------------------------------------------------------ features */
-.feature {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: start;
-  gap: 56px;
-  margin-top: 104px;
-}
-
-.feature.is-reverse {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-}
-
-.feature.is-reverse .feature-copy {
-  order: 2;
-}
-
-.feature-copy .eyebrow {
-  margin-bottom: 12px;
-}
-
-.feature-copy h2 {
-  max-width: 22ch;
-}
-
-.feature-copy > p {
-  margin-top: 16px;
-  font-size: 15.5px;
-}
-
-.feature-copy em {
-  font-style: normal;
-  font-family: var(--mono);
-  font-size: 0.9em;
-  color: var(--text);
-}
-
-/* ------------------------------------------------------------------ grid */
-.cell {
-  padding: 20px 20px 22px;
-}
-
-.cell-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  margin-bottom: 14px;
-  border-radius: 8px;
-  background: var(--accent-wash);
-  color: var(--accent);
-}
-
-.cell h3 {
-  font-size: 14.5px;
-}
-
-.cell p {
-  margin-top: 6px;
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: var(--mute);
-}
-
-/* ------------------------------------------------------------------ install */
-.install-lead {
-  max-width: 46ch;
-  font-size: 13.5px;
-  color: var(--mute);
-}
-
+/* two platforms ship today, not three */
 .platforms {
-  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
 }
 
-.platform {
-  padding: 20px 20px 18px;
-}
-
-.platform-name {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--title);
-}
-
-.platform-req {
-  margin-top: 4px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--mute);
-}
-
-.platform ul {
-  margin: 16px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 8px;
-}
-
-.platform li {
-  font-size: 12.5px;
-  color: var(--dim);
-}
-
-.platform-file {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 3px 4px;
-  margin: 0 -4px;
-  border-radius: 5px;
-  color: inherit;
-  text-decoration: none;
-  transition: background 0.15s ease;
-}
-
-.platform-file:hover {
-  background: var(--accent-wash);
-}
-
-.platform-file:hover code {
-  color: var(--accent);
-}
-
-.platform-file code {
-  font-size: 10.5px;
-  color: var(--accent);
-  background: transparent;
-  padding: 0;
-  text-align: right;
-  overflow-wrap: anywhere;
-}
-
-.install-note {
-  margin-top: 18px;
-  max-width: 84ch;
-  font-size: 13px;
-  color: var(--mute);
-}
-
-.install-note strong {
-  color: var(--text);
-}
-
-/* ------------------------------------------------------------------ faq */
-.faq details {
-  border-top: 1px solid var(--line);
-  padding: 18px 0;
-}
-
-.faq details:last-of-type {
-  border-bottom: 1px solid var(--line);
-}
-
-.faq summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--title);
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  font-family: var(--mono);
-  font-size: 16px;
-  color: var(--accent);
-  transition: transform 0.2s ease;
-}
-
-.faq details[open] summary::after {
-  transform: rotate(45deg);
-}
-
-.faq p {
-  margin-top: 12px;
-  max-width: 78ch;
-  font-size: 14px;
-}
-
-/* ------------------------------------------------------------------ closing */
-.closing {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 32px 34px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--panel);
-}
-
-.closing h2 {
-  font-size: clamp(22px, 2.6vw, 30px);
-}
-
-.closing p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--mute);
-}
-
-.closing .btn-row {
-  margin-top: 0;
-}
-
-.legal {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.legal p {
-  max-width: 90ch;
-  font-size: 12px;
-  color: var(--mute);
-}
-
-/* ------------------------------------------------------------------ responsive */
 @media (max-width: 900px) {
-  .feature,
-  .feature.is-reverse {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
-    margin-top: 76px;
-  }
-
-  .feature.is-reverse .feature-copy {
-    order: 0;
-  }
-
   .platforms {
     grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 620px) {
-  .hero {
-    padding-top: 24px;
-  }
-
-  .btn-row .btn {
-    flex: 1 1 100%;
-    justify-content: center;
-  }
-
-  .closing {
-    padding: 24px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .faq summary::after,
-  .platform-file {
-    transition: none;
   }
 }
 </style>

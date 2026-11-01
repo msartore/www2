@@ -167,21 +167,21 @@
     <section class="also">
       <p class="eyebrow">05 — Also on the workbench</p>
       <div class="also-grid">
-        <article class="card">
+        <article class="card cell">
           <h3>Extract</h3>
           <p>
             Pull the APK of any installed app — split or single — straight out of the
             device, without adb on a laptop.
           </p>
         </article>
-        <article class="card">
+        <article class="card cell">
           <h3>Editor</h3>
           <p>
             Syntax-highlighted editing for XML, JSON and smali, with the project tree a tap
             away.
           </p>
         </article>
-        <article class="card">
+        <article class="card cell">
           <h3>Workspace</h3>
           <p>
             Keep decompiled projects on the device, browse them, and move them in or out as
@@ -218,8 +218,6 @@
     </section>
 
     <!-- ------------------------------------------------------------ closing -->
-    <div class="divider"></div>
-
     <section class="closing">
       <div>
         <h2>APKM</h2>
@@ -347,118 +345,14 @@ useHead({
 </script>
 
 <style scoped lang="scss">
-.apkm :deep(code) {
-  font-family: var(--mono);
-  font-size: 0.92em;
-  padding: 1px 5px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffd9c7;
-}
-
-/* ------------------------------------------------------------------ type */
-h1,
-h2,
-h3 {
-  margin: 0;
-  color: var(--text);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-}
-
-h1 {
-  margin-top: 14px;
-  font-size: clamp(40px, 6.2vw, 72px);
-}
-
-h2 {
-  margin-top: 12px;
-  font-size: clamp(26px, 3.4vw, 38px);
-  max-width: 18ch;
-}
-
-h3 {
-  font-size: 15px;
-  letter-spacing: -0.01em;
-}
-
-p {
-  margin: 0;
-  line-height: 1.68;
-  color: var(--dim);
-}
-
-.eyebrow {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 8px;
-  margin: 0 0 14px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mute);
-}
-
-.eyebrow .sep {
-  color: #33403f;
-}
-
-.lead {
-  margin-top: 22px;
-  max-width: 56ch;
-  font-size: clamp(16px, 1.3vw, 17.5px);
-}
-
-.cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.btn-note {
-  font-family: var(--mono);
-  font-size: 11px;
-  opacity: 0.74;
-}
-
-.hints {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin: 22px 0 0;
-  padding: 0;
-  list-style: none;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--mute);
-}
-
-.hints li::before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  vertical-align: 2px;
-  opacity: 0.8;
-}
-
-/* ------------------------------------------------------------------ hero */
+/* hero: copy beside the phone */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 288px);
   gap: clamp(32px, 5vw, 72px);
   align-items: start;
-  padding-top: 26px;
 }
 
-/* ------------------------------------------------------------------ phone */
 .phone {
   margin: 0;
   justify-self: end;
@@ -485,7 +379,7 @@ p {
   margin-top: 14px;
 }
 
-/* ------------------------------------------------------------------ strip */
+/* provenance reads as a panel here, not a rule */
 .strip {
   margin: clamp(48px, 7vw, 76px) 0;
   padding: 24px 28px;
@@ -494,28 +388,11 @@ p {
   background: var(--panel);
 }
 
-.strip p {
-  max-width: 84ch;
-  font-size: 14.5px;
-}
-
-.strip strong {
-  color: var(--text);
-}
-
-.strip em {
-  color: var(--accent);
-  font-style: normal;
-  font-family: var(--mono);
-  font-size: 0.94em;
-}
-
-/* ------------------------------------------------------------------ feature */
+/* feature rows hold a phone shot instead of a wide one */
 .feature {
-  display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
   gap: clamp(28px, 6vw, 84px);
-  align-items: start;
+  margin-top: 0;
   padding: clamp(34px, 5vw, 56px) 0;
   border-top: 1px solid var(--line);
 }
@@ -524,47 +401,10 @@ p {
   grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
 }
 
-.feature.is-reverse .feature-copy {
-  order: 2;
-}
-
 .feature.is-reverse .phone {
   justify-self: start;
 }
 
-.feature-copy p {
-  margin-top: 16px;
-  max-width: 52ch;
-}
-
-.ticks {
-  display: grid;
-  gap: 9px;
-  margin: 22px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.ticks li {
-  position: relative;
-  padding-left: 20px;
-  font-size: 14px;
-  color: var(--dim);
-}
-
-.ticks li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 9px;
-  height: 9px;
-  border-radius: 3px;
-  border: 1px solid var(--accent);
-  background: rgba(255, 122, 42, 0.14);
-}
-
-/* ------------------------------------------------------------------ also */
 .also {
   padding: clamp(40px, 6vw, 66px) 0;
   border-top: 1px solid var(--line);
@@ -577,92 +417,17 @@ p {
   margin-top: 22px;
 }
 
-.also-grid .card {
-  padding: 20px 22px;
-}
-
-.also-grid p {
-  margin-top: 8px;
-  font-size: 13.5px;
-}
-
-/* ------------------------------------------------------------------ faq */
 .faq {
   padding: clamp(40px, 6vw, 66px) 0;
   border-top: 1px solid var(--line);
 }
 
-.faq details {
-  border-bottom: 1px solid var(--line);
-  padding: 16px 0;
-}
-
-.faq summary {
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  list-style: none;
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq summary::after {
-  content: "+";
-  float: right;
-  font-family: var(--mono);
-  color: var(--accent);
-}
-
-.faq details[open] summary::after {
-  content: "−";
-}
-
-.faq p {
-  margin-top: 12px;
-  max-width: 72ch;
-  font-size: 14px;
-}
-
-/* ------------------------------------------------------------------ closing */
-.closing {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(36px, 5vw, 56px) 0 8px;
-}
-
-.closing h2 {
-  max-width: none;
-}
-
-.closing p {
-  margin-top: 8px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  color: var(--mute);
-}
-
-.closing .btn-row {
-  margin-top: 0;
-}
-
-/* ------------------------------------------------------------------ responsive */
 @media (max-width: 900px) {
   .hero,
   .feature,
   .feature.is-reverse {
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
-  }
-
-  .feature.is-reverse .feature-copy {
-    order: 0;
   }
 
   .phone,
