@@ -381,7 +381,7 @@ useHead({
   script: [
     {
       type: "application/ld+json",
-      children: JSON.stringify({
+      textContent: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         name: "ATA-GUI",
@@ -409,7 +409,7 @@ useHead({
     },
     {
       type: "application/ld+json",
-      children: JSON.stringify({
+      textContent: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: faq.map((item) => ({
@@ -421,7 +421,7 @@ useHead({
     },
     {
       type: "application/ld+json",
-      children: JSON.stringify({
+      textContent: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
