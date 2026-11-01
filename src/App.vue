@@ -57,6 +57,7 @@ import { useRouter } from "vue-router";
 import banner1 from "~/assets/banner1.png";
 import banner4 from "~/assets/banner4.png";
 import bannerApkm from "~/assets/banner-apkm.png";
+import bannerOpenColorHub from "~/assets/banner-opencolorhub.png";
 import Icon from "~/components/Icon.vue";
 import MobileMenu from "~/components/MobileMenu.vue";
 import { isDark, toggleDark } from "~/composables";
@@ -79,6 +80,7 @@ const PAGE_BY_PATH = {
   "/projects/ares": "1-1",
   "/projects/apkm": "1-2",
   "/projects/ata": "1-3",
+  "/projects/opencolorhub": "1-4",
   "/donate": "2",
   "/contact": "3",
 };
@@ -99,6 +101,12 @@ const pages = ref([
       { label: "ATA-GUI", path: "/projects/ata-gui", index: "0", img: banner1 },
       { label: "Ares", path: "/projects/ares", index: "1", img: banner4 },
       { label: "APKM", path: "/projects/apkm", index: "2", img: bannerApkm },
+      {
+        label: "OpenColorHub",
+        path: "/projects/opencolorhub",
+        index: "3",
+        img: bannerOpenColorHub,
+      },
     ],
   },
   { index: "2", label: "Donate", path: "/donate" },

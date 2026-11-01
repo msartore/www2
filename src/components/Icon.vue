@@ -29,6 +29,11 @@ import lock from "bootstrap-icons/icons/lock.svg?raw";
 import download from "bootstrap-icons/icons/download.svg?raw";
 import globe2 from "bootstrap-icons/icons/globe2.svg?raw";
 import fileEarmarkText from "bootstrap-icons/icons/file-earmark-text.svg?raw";
+import windowIcon from "bootstrap-icons/icons/window.svg?raw";
+import save from "bootstrap-icons/icons/save.svg?raw";
+import terminal from "bootstrap-icons/icons/terminal.svg?raw";
+import arrowRepeat from "bootstrap-icons/icons/arrow-repeat.svg?raw";
+import fan from "bootstrap-icons/icons/fan.svg?raw";
 
 const props = defineProps({
   name: { type: String, required: true },
@@ -53,6 +58,11 @@ const GLYPHS = {
   download,
   world: globe2,
   file: fileEarmarkText,
+  window: windowIcon,
+  save,
+  terminal,
+  repeat: arrowRepeat,
+  fan,
 };
 
 const markup = computed(() => GLYPHS[props.name] ?? arrowRight);

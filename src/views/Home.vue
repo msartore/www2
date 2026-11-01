@@ -148,6 +148,7 @@ const taglines = {
   "ATA-GUI": "adb & fastboot, behind one calm window",
   Ares: "local file sharing, no cloud",
   APKM: "the APK workbench, on your phone",
+  OpenColorHub: "fans and 200 LEDs, without the vendor client",
 };
 
 const message = ref("hi, I'm Massimiliano");
