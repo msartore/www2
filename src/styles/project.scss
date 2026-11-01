@@ -131,6 +131,8 @@ figcaption {
   max-width: 20ch;
 }
 
+/* Eyebrows are <p> elements: never style a bare descendant `p` in this file —
+   the page rule outranks `.eyebrow` and the label renders at body size. */
 .feature-copy > p:not(.eyebrow) {
   margin-top: 18px;
   max-width: 52ch;
@@ -190,7 +192,7 @@ figcaption {
   max-width: 20ch;
 }
 
-.install-head p {
+.install-head > p {
   font-size: 15px;
 }
 
