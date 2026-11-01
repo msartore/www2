@@ -241,7 +241,7 @@
       </div>
     </section>
 
-    <footer class="legal">
+    <footer class="project-legal">
       <p>
         ATA-GUI is licensed under the Apache License 2.0. Android is a trademark of
         Google LLC.

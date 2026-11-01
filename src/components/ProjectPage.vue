@@ -148,10 +148,6 @@ const paragraphs = props.description.split("\n").filter(Boolean);
 }
 
 @media (max-width: 900px) {
-  .project-hero {
-    padding-top: 24px;
-  }
-
   .project-body {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;

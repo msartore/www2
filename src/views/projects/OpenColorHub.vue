@@ -253,7 +253,7 @@
       </div>
     </section>
 
-    <footer class="legal">
+    <footer class="project-legal">
       <p>
         The upstream colorctl portions are MIT; the embedded PawnIO module is LGPL. Colorful and
         iGame are trademarks of their owners — this project is not affiliated with Colorful
