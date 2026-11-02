@@ -100,13 +100,13 @@ figcaption {
   font-family: var(--mono);
   font-size: 0.94em;
   font-style: normal;
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .strip a {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-wash);
+  border-bottom: 1px solid var(--accent-2-wash);
 }
 
 /* ------------------------------------------------------------------ features */
@@ -249,12 +249,12 @@ figcaption {
 }
 
 .platform-file:hover {
-  background: var(--accent-wash);
+  background: var(--accent-2-wash);
 }
 
 .platform li code {
   font-size: 10.5px;
-  color: var(--accent);
+  color: var(--accent-2);
   background: transparent;
   text-align: right;
   overflow-wrap: anywhere;
@@ -272,9 +272,9 @@ figcaption {
 }
 
 .install-note a {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-wash);
+  border-bottom: 1px solid var(--accent-2-wash);
 }
 
 /* ------------------------------------------------------------------ faq */

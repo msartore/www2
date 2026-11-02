@@ -241,7 +241,7 @@ main {
 }
 
 .foot-links a:hover {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 @media (max-width: 900px) {

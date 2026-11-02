@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------- design system
-   Dark-first, mint accent, mono details — the same language as ATA-GUI.
+   Dark-first, favicon-magenta accent, mono details — the same language as ATA-GUI.
    Tokens live on :root and flip under html:not(.dark) for the light toggle. */
 
 :root {
@@ -12,9 +12,13 @@
   --title: #f3f8fa;
   --dim: #a4b1b6;
   --mute: #8b989d;
-  --accent: #24e0a4;
-  --accent-ink: #05261c;
-  --accent-wash: rgba(36, 224, 164, 0.08);
+  /* the favicon's magenta stop (#d13885), lifted until it clears 4.5:1 on --bg */
+  --accent: #ef4f9a;
+  --accent-ink: #1c0410;
+  --accent-wash: rgba(239, 79, 154, 0.1);
+  /* the blue side of the same gradient — carried by links and inline code */
+  --accent-2: #6aa0f0;
+  --accent-2-wash: rgba(106, 160, 240, 0.22);
   --danger: #ff6262;
   --sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, Menlo, monospace;
@@ -32,9 +36,11 @@ html:not(.dark) {
   --title: #0c1615;
   --dim: #465655;
   --mute: #5f6f6e;
-  --accent: #0c9a72;
+  --accent: #b02a6e;
   --accent-ink: #ffffff;
-  --accent-wash: rgba(12, 154, 114, 0.1);
+  --accent-wash: rgba(176, 42, 110, 0.1);
+  --accent-2: #2f6fc0;
+  --accent-2-wash: rgba(47, 111, 192, 0.25);
 }
 
 body {
@@ -125,7 +131,7 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 code {
@@ -134,7 +140,7 @@ code {
   padding: 1px 5px;
   border-radius: 5px;
   background: var(--panel-2);
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .lead {
@@ -179,9 +185,8 @@ code {
 }
 
 .btn-primary:hover {
-  background: var(--accent);
+  background: var(--accent-2);
   color: var(--accent-ink);
-  filter: brightness(1.06);
 }
 
 .btn-row {
@@ -332,9 +337,9 @@ code {
 }
 
 .prose a {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-wash);
+  border-bottom: 1px solid var(--accent-2-wash);
 }
 
 .prose strong {
@@ -376,7 +381,7 @@ code {
 /* ------------------------------------------------------------------ APKM
    The product's Signal Orange, deepened on paper where #ff7a2a fails as text. */
 .apkm {
-  --accent: #ff7a2a;
+  --accent: #f77126;
   --accent-ink: #180800;
 }
 
