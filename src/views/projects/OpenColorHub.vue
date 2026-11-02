@@ -14,7 +14,7 @@
       <div class="btn-row">
         <a class="btn btn-primary" href="https://github.com/msartore/OpenColorHub/releases/latest">
           Download OpenColorHub
-          <span class="btn-note">v0.3.0 · 2.2 MB</span>
+          <span class="btn-note">Free · GPL-3.0</span>
         </a>
         <a class="btn" href="https://github.com/msartore/OpenColorHub">View source</a>
       </div>
@@ -209,7 +209,7 @@
             <li v-for="format in platform.formats" :key="format.label">
               <a class="platform-file" href="https://github.com/msartore/OpenColorHub/releases/latest">
                 <span>{{ format.label }}</span>
-                <code>{{ format.file }}</code>
+                <code>{{ format.ext }}</code>
               </a>
             </li>
           </ul>
@@ -322,18 +322,18 @@ const platforms = [
     name: "Windows",
     requirement: "10 / 11 · x64 · PawnIO for fan writes",
     formats: [
-      { label: "Installer", file: "OpenColorHub_0.3.0_x64-setup.exe" },
-      { label: "MSI", file: "OpenColorHub_0.3.0_x64_en-US.msi" },
-      { label: "Portable", file: "OpenColorHub-0.3.0-portable-win64.zip" },
+      { label: "Installer", ext: ".exe" },
+      { label: "MSI", ext: ".msi" },
+      { label: "Portable", ext: ".zip" },
     ],
   },
   {
     name: "Linux",
     requirement: "x64 · GTK 3 · WebKitGTK · root or CAP_SYS_RAWIO",
     formats: [
-      { label: "AppImage", file: "OpenColorHub_0.3.0_amd64.AppImage" },
-      { label: "Debian", file: "OpenColorHub_0.3.0_amd64.deb" },
-      { label: "Tarball", file: "opencolorhub-0.3.0-linux-x64.tar.gz" },
+      { label: "AppImage", ext: ".AppImage" },
+      { label: "Debian", ext: ".deb" },
+      { label: "Tarball", ext: ".tar.gz" },
     ],
   },
 ];
@@ -394,7 +394,6 @@ useHead({
         applicationCategory: "UtilitiesApplication",
         applicationSubCategory: "Hardware control",
         operatingSystem: "Windows 10, Windows 11, Linux",
-        softwareVersion: "0.3.0",
         license: "https://www.gnu.org/licenses/gpl-3.0.html",
         downloadUrl: "https://github.com/msartore/OpenColorHub/releases/latest",
         codeRepository: "https://github.com/msartore/OpenColorHub",

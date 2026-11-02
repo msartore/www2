@@ -14,7 +14,7 @@
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/msartore/ATA-GUI/releases/latest">
           Download ATA-GUI
-          <span class="btn-note">v4.0.0 · 2.5 MB</span>
+          <span class="btn-note">Free · Apache-2.0</span>
         </a>
         <a class="btn" href="https://github.com/msartore/ATA-GUI">View source</a>
       </div>
@@ -22,7 +22,7 @@
       <ul class="hints">
         <li>Portable ZIP, no install</li>
         <li>No account, no ads</li>
-        <li>Upgrades over 3.x in place</li>
+        <li>Upgrades in place</li>
       </ul>
 
       <figure class="shot hero-shot">
@@ -203,7 +203,7 @@
             <li v-for="format in platform.formats" :key="format.label">
               <a class="platform-file" href="https://github.com/msartore/ATA-GUI/releases/latest">
                 <span>{{ format.label }}</span>
-                <code>{{ format.file }}</code>
+                <code>{{ format.ext }}</code>
               </a>
             </li>
           </ul>
@@ -213,8 +213,8 @@
       <p class="install-note">
         Everything is published on
         <a href="https://github.com/msartore/ATA-GUI/releases">GitHub Releases</a>. New
-        tags ship as pre-releases first: installs still on 3.x keep being offered the last
-        stable build until a 4.x version is promoted.
+        tags ship as pre-releases first: installs keep being offered the last stable build
+        until a version is promoted.
       </p>
     </section>
 
@@ -308,26 +308,26 @@ const platforms = [
     name: "Windows",
     requirement: "10 / 11 · x64",
     formats: [
-      { label: "Installer", file: "ATA-GUI_4.0.0_x64-setup.exe" },
-      { label: "MSI", file: "ATA-GUI_4.0.0_x64_en-US.msi" },
-      { label: "Portable", file: "ATA-GUI-4.0.0-portable-windows-x64.zip" },
+      { label: "Installer", ext: ".exe" },
+      { label: "MSI", ext: ".msi" },
+      { label: "Portable", ext: ".zip" },
     ],
   },
   {
     name: "Linux",
     requirement: "x64 · GTK 3 · WebKitGTK",
     formats: [
-      { label: "AppImage", file: "ATA-GUI_4.0.0_amd64.AppImage" },
-      { label: "Debian", file: "ATA-GUI_4.0.0_amd64.deb" },
-      { label: "Fedora", file: "ATA-GUI-4.0.0-1.x86_64.rpm" },
+      { label: "AppImage", ext: ".AppImage" },
+      { label: "Debian", ext: ".deb" },
+      { label: "Fedora", ext: ".rpm" },
     ],
   },
   {
     name: "macOS",
     requirement: "10.15+ · Apple silicon",
     formats: [
-      { label: "Installer", file: "ATA-GUI_4.0.0_aarch64.dmg" },
-      { label: "Portable", file: "ATA-GUI-4.0.0-portable-darwin-arm64.zip" },
+      { label: "Installer", ext: ".dmg" },
+      { label: "Portable", ext: ".zip" },
     ],
   },
 ];
@@ -388,7 +388,6 @@ useHead({
         applicationCategory: "DeveloperApplication",
         applicationSubCategory: "Android device management",
         operatingSystem: "Windows 10, Windows 11, Linux, macOS",
-        softwareVersion: "4.0.0",
         license: "https://www.apache.org/licenses/LICENSE-2.0",
         downloadUrl: "https://github.com/msartore/ATA-GUI/releases/latest",
         codeRepository: "https://github.com/msartore/ATA-GUI",

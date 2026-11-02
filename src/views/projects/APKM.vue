@@ -294,7 +294,6 @@ useHead({
         applicationCategory: "UtilitiesApplication",
         applicationSubCategory: "APK editor",
         operatingSystem: "Android 7.0 and up",
-        softwareVersion: "2.7.0",
         license: "https://www.apache.org/licenses/LICENSE-2.0",
         installUrl: "https://play.google.com/store/apps/details?id=dev.msartore.apkm",
         screenshot: [
