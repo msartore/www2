@@ -35,11 +35,31 @@
     <h2>On-Device Processing</h2>
 
     <p>
-      All file processing performed by the Application, including merging,
-      decompiling, building, and inspecting APK files, takes place entirely on
-      your device. Your files are never uploaded to the Service Provider or to
-      any third party, and the Service Provider does not operate any server
-      that receives your files or their contents.
+      All file processing performed by the Application — merging, decompiling,
+      building, refactoring, protecting, inspecting and extracting APK files —
+      takes place entirely on your device. The Application does not operate a
+      server and does not upload your files, their contents or their file paths
+      to the Service Provider. If you choose to share or export a file, it is
+      sent only to the app or service you select. The only data the Application
+      sends off your device is the limited usage, diagnostic, configuration and
+      advertising data described in this policy; it never includes your files
+      or their contents. The Application disables Android Auto Backup for its
+      app data, so project files, imported framework files and app preferences
+      are not copied to Google Drive or transferred to another device by
+      Android's backup services.
+    </p>
+
+    <p>
+      <strong>Installed applications.</strong> Extract needs to read the list
+      of applications installed on your device — app name, package name, icon
+      and whether the app is split — so that you can select an app and extract
+      its APK files or merge its split APKs. The disclosure appears when you
+      open Extract, not before. The list is read only after you accept that
+      separate in-app disclosure, it is processed on your device only, and it
+      is never uploaded, shared or sold. You can revoke this access at any time
+      in <strong>Settings → Privacy</strong>. If you decline or revoke it, Extract stays behind
+      the disclosure and cannot list or extract installed apps, but every other
+      feature continues to work with files you select yourself.
     </p>
 
     <h2>What information does the Application obtain and how is it used?</h2>
@@ -92,7 +112,7 @@
     <p>
       You can change your advertising choices at any time through the consent
       options in the Application, and you can reset or delete your advertising
-      ID in your device's settings (for example, under Settings → Privacy →
+      ID in your device's settings (for example, under <strong>Settings → Privacy</strong> →
       Ads on most Android devices).
     </p>
 
@@ -100,17 +120,61 @@
 
     <p>
       The Application uses Firebase Crashlytics to collect crash and
-      diagnostic data, such as device model, operating system version, crash
-      stack traces, and installation identifiers. This information is used
-      solely to identify and fix bugs and to improve the stability of the
-      Application.
+      diagnostic data, such as device model, operating system version, app
+      version, crash stack traces, diagnostic logs and Firebase installation
+      identifiers. This information is used solely to identify and fix bugs and
+      to improve the stability of the Application. Crash reporting is optional
+      and off by default. You can enable it on the privacy screen or later in
+      <strong>Settings → Privacy</strong>; if you leave it off, no crash data is
+      collected. Crash reports do not include your files or their contents.
+    </p>
+
+    <h2>Usage analytics (Firebase Analytics)</h2>
+
+    <p>
+      Usage analytics is optional and off by default. You can enable it on the
+      privacy screen or later in <strong>Settings → Privacy</strong>, and you can turn it off
+      again at any time there. When enabled, the Application uses Firebase
+      Analytics, provided by Google, to understand which screens and features
+      are used and whether operations complete successfully. Events include
+      screen views, feature selections, operation start and completion (for
+      example merge, decompile, build, refactor, protect, info, extract and
+      clone), acceptance of these terms, the result of the advertising-consent
+      choice, and automatically collected session and app-lifecycle events such
+      as first open, session start and app updates. These events do not include
+      your files, their contents, file paths, or the list of applications
+      installed on your device.
     </p>
 
     <p>
-      The Application does not collect precise location data and does not use
-      cookies or tracking pixels. The Application does not perform behavioral
-      or marketing analytics of your usage; it only collects crash and
-      diagnostic data as described above.
+      Firebase Analytics also receives a Firebase installation identifier, an
+      app-instance identifier, session data, device model, operating-system
+      version, app version, language and locale, and your IP address, from
+      which Google derives an approximate, city-level location. The Application
+      disables collection of the Android advertising ID by Firebase Analytics;
+      the advertising ID is used only by AdMob as described above. If you do
+      not enable usage analytics, no analytics events are sent. Event data is
+      retained by Google for 2 months, after which it is deleted or aggregated.
+    </p>
+
+    <h2>Remote configuration (Firebase Remote Config)</h2>
+
+    <p>
+      The Application fetches a small set of configuration flags from Firebase
+      Remote Config in the background (for example, whether to show an
+      ad-blocking dialog). No user content is sent. The request carries a
+      Firebase installation identifier and your IP address, which Google
+      processes on the Service Provider's behalf to deliver the configuration.
+      Legal basis: legitimate interests (keeping the Application configurable,
+      secure and up to date).
+    </p>
+
+    <p>
+      <strong>Firebase Installations and Sessions.</strong> Firebase
+      Installations generates the installation identifier used by the Firebase
+      services described in this policy. Firebase Sessions, part of Firebase
+      Analytics, records session start and end times and engagement. These
+      identifiers are not used to identify you by name.
     </p>
 
     <h2>Legal basis for processing your personal data</h2>
@@ -124,16 +188,19 @@
         Consent: advertising (AdMob), including both personalized and
         non-personalized advertising for users in the European Economic Area
         and the United Kingdom, collected through the consent options presented
-        in the Application. You may withdraw consent at any time without
-        affecting processing that occurred before withdrawal.
+        in the Application, usage analytics (Firebase Analytics) and crash
+        reporting (Firebase Crashlytics), both of which are off by default and
+        can be enabled on the privacy screen or in <strong>Settings → Privacy</strong>. You may withdraw consent at
+        any time without affecting processing that occurred before withdrawal.
       </li>
       <li>
-        Legitimate interests: crash reporting and diagnostics (Firebase
-        Crashlytics), maintaining network and information security, preventing
-        fraud and abuse, and providing the Application free of charge through
-        advertising for users outside the EEA and the United Kingdom, provided
-        those interests are not overridden by your data protection rights or
-        fundamental freedoms.
+        Legitimate interests: remote configuration (Firebase Remote Config),
+        maintaining network and information security, preventing fraud and
+        abuse, and providing the Application free of charge through advertising
+        for users outside the EEA and the United Kingdom, provided those
+        interests are not overridden by your data protection rights or
+        fundamental freedoms. You may object to processing based on legitimate
+        interests at any time by contacting the Service Provider.
       </li>
       <li>Legal obligation: to comply with laws or government requests.</li>
     </ul>
@@ -150,29 +217,38 @@
     <h2>Cookies and similar technologies</h2>
 
     <p>
-      The Application itself does not use cookies or tracking pixels. The
-      third-party SDKs described above use device identifiers (such as the
-      advertising ID) stored on your device. Where required by law, the
-      Service Provider will obtain your consent before such identifiers are
-      accessed or used.
+      The Application's own code does not use cookies or tracking pixels. The
+      third-party SDKs described above use device identifiers and local storage
+      (for example the advertising ID, Firebase installation ID and app-instance
+      ID). The advertising-consent message is served by Google in a WebView and
+      may store data locally, subject to Google's privacy policy. Advertising
+      identifiers are accessed only as described in the Advertising section;
+      the Firebase identifiers are used for the purposes and on the legal bases
+      described above.
     </p>
 
     <h2>Automated decision-making and profiling</h2>
 
     <p>
-      The Application does not use automated decision-making, including
-      profiling, that produces legal effects concerning you or similarly
-      significantly affects you.
+      The Application does not use automated decision-making that produces
+      legal effects concerning you or similarly significantly affects you.
+      Personalized advertising may involve profiling as described in the
+      Advertising section; you can control it through the consent options and
+      your device's advertising settings.
     </p>
 
     <h2>What information does the Application collect automatically?</h2>
 
     <p>
       Through the third-party services described above, the Application may
-      collect certain information automatically, including, but not limited
-      to, the type of mobile device you use, your mobile device's identifiers,
-      the IP address of your mobile device, your mobile operating system, and
-      information about the way you use the Application and interact with ads.
+      collect certain information automatically, including the type of mobile
+      device you use, device and app identifiers (such as the advertising ID,
+      Firebase installation ID and app-instance ID), the IP address of your
+      mobile device, your mobile operating system and app version, language and
+      locale, an approximate city-level location derived from your IP address,
+      information about the way you use the Application (such as screens
+      viewed, features selected and whether an operation completed), crash logs
+      and diagnostics, and information about how you interact with ads.
     </p>
 
     <h2>
@@ -182,7 +258,10 @@
 
     <p>
       This Application does not gather precise information about the location
-      of your mobile device.
+      of your mobile device. AdMob may derive an approximate, city-level
+      location from your IP address. When usage analytics is enabled, Firebase
+      Analytics may also derive an approximate, city-level location from your
+      IP address. See the sections above.
     </p>
 
     <h2>Does the Application use Artificial Intelligence (AI) technologies?</h2>
@@ -198,11 +277,12 @@
     </h2>
 
     <p>
-      The Service Provider does not sell your personal data and does not share
-      it with third parties for their own marketing purposes. The third-party
-      services used by the Application (AdMob and Firebase Crashlytics, both
-      provided by Google) receive the information described above in order to
-      provide their services, and process it under their own privacy policies:
+      The Service Provider does not sell your personal data. The third-party
+      services used by the Application are Google AdMob and the Firebase
+      services Analytics, Crashlytics, Remote Config, Installations and
+      Sessions, all provided by Google. They receive the information described
+      above to provide their services and process it under their own privacy
+      policies:
     </p>
     <ul>
       <li>
@@ -218,7 +298,8 @@
           href="https://firebase.google.com/support/privacy/"
           target="_blank"
           rel="noopener noreferrer"
-          >Firebase Crashlytics</a
+          >Firebase services (Analytics, Crashlytics, Remote Config,
+          Installations and Sessions)</a
         >
       </li>
     </ul>
@@ -254,7 +335,8 @@
     </p>
 
     <p>
-      For Firebase Crashlytics, Google acts as a processor on behalf of the
+      For the Firebase services (Analytics, Crashlytics, Remote Config,
+      Installations and Sessions), Google acts as a processor on behalf of the
       Service Provider, under a Data Processing Agreement that imposes the same
       data protection obligations as described in this Privacy Policy.
     </p>
@@ -312,9 +394,12 @@
 
     <p>
       You can also withdraw or change your advertising consent at any time
-      through the consent options in the Application. To request deletion of
-      your personal data, withdraw consent, or exercise any of your rights,
-      contact the Service Provider at
+      through the consent options in the Application. You can turn crash
+      reports and usage analytics on or off on the privacy screen or later in
+      <strong>Settings → Privacy</strong>, and you can object to other processing based on
+      legitimate interests by contacting the Service Provider. To request
+      deletion of your personal data, withdraw consent, or exercise any of your
+      rights, contact the Service Provider at
       <a href="mailto:me@msartore.dev">me@msartore.dev</a>.
     </p>
 
@@ -323,9 +408,14 @@
     <p>Personal data is retained for no longer than necessary:</p>
     <ul>
       <li>
-        Crash and diagnostic data collected via Firebase Crashlytics is
-        retained by Google for a limited period (currently 90 days) and then
-        deleted.
+        When crash reporting is enabled, crash and diagnostic data collected
+        via Firebase Crashlytics is retained by Google for a limited period
+        (currently 90 days) and then deleted.
+      </li>
+      <li>
+        When usage analytics is enabled, event data collected via Firebase
+        Analytics is retained by Google for 2 months, after which it is deleted
+        or aggregated.
       </li>
       <li>
         Advertising data collected via AdMob is retained by Google for a
@@ -343,8 +433,11 @@
         >.
       </li>
       <li>
-        Data stored locally by the Application remains on your device until
-        you uninstall the Application.
+        Files and projects created by the Application are stored in its private
+        app storage and remain there until you delete them in the Application,
+        clear its data, or uninstall it. The Application disables Android Auto
+        Backup, so these files are not copied to Google Drive or transferred to
+        another device by Android's backup services.
       </li>
       <li>
         If you contact the Service Provider by email, the correspondence is
@@ -427,7 +520,7 @@
       <a href="mailto:me@msartore.dev">me@msartore.dev</a>.
     </p>
 
-    <p>This privacy policy is effective as of 2026-08-16</p>
+    <p>This privacy policy is effective as of 2026-11-02</p>
 
     <h2>What are your GDPR data protection rights?</h2>
 
@@ -525,8 +618,9 @@
     </ul>
 
     <p>
-      The Service Provider does not sell your personal information.
-      Personalized advertising as described above may be considered "sharing"
+      The Service Provider does not sell your personal information for monetary
+      consideration. Personalized advertising as described above may be
+      considered "sharing"
       under the CPRA; you can opt out at any time through the consent options
       in the Application or by resetting your advertising ID in your device
       settings. To exercise any of these rights, please contact the Service
@@ -540,12 +634,15 @@
     <h2>How do you give your consent?</h2>
 
     <p>
-      Where processing is based on consent (such as personalized advertising),
-      you provide that consent through the consent options presented in the
-      Application. You may withdraw consent at any time without affecting
-      processing carried out before withdrawal. Processing based on other
-      lawful bases, including legitimate interests or legal obligations, is
-      carried out as described above.
+      Where processing is based on consent (such as personalized advertising or
+      usage analytics), you provide that consent through the consent options
+      presented in the Application. The Terms of Service and the privacy
+      options are presented on separate screens; accepting the terms does not
+      turn on optional analytics. Usage analytics is off until you enable it on
+      the privacy screen or in <strong>Settings → Privacy</strong>. You may withdraw consent at
+      any time without affecting processing carried out before withdrawal.
+      Processing based on other lawful bases, including legitimate interests or
+      legal obligations, is carried out as described above.
     </p>
 
     <h2>How can you contact the Data Controller?</h2>
@@ -560,9 +657,12 @@
     <h2>How to request deletion of your personal data</h2>
 
     <p>
-      The Service Provider does not operate a server and does not store your
-      personal data. If you wish to exercise your rights, including the right
-      to erasure, please contact the Service Provider by email at
+      The Service Provider does not operate its own servers. Data collected by
+      Firebase Analytics, Crashlytics, Remote Config, Installations and
+      Sessions is stored by Google in the Service Provider's Firebase project
+      and processed on the Service Provider's behalf. If you wish to exercise
+      your rights, including the right to erasure, please contact the Service
+      Provider by email at
       <a href="mailto:me@msartore.dev">me@msartore.dev</a>. The Service
       Provider may ask you to verify your identity before processing your
       request, and will respond within one month of receiving it, extendable
@@ -576,23 +676,36 @@
     </p>
     <ul>
       <li>
-        Data held by the Service Provider. This is limited to any
-        correspondence you have exchanged with the Service Provider by email.
-        On request, the Service Provider will delete it, subject to any legal
-        retention obligations.
+        Data held by the Service Provider. Data collected by Firebase
+        Analytics, Crashlytics, Remote Config, Installations and Sessions is
+        stored by Google in the Service Provider's Firebase project and
+        processed on the Service Provider's behalf. The Service Provider can
+        access analytics and crash reports but cannot identify you by name from
+        them. On request, the Service Provider will delete any correspondence
+        and, where technically possible, request deletion of Firebase data;
+        Google's retention periods apply.
       </li>
       <li>
-        Data stored on your device. Files created by the Application are
-        stored only on your device and are never transmitted to the Service
-        Provider. You can delete them at any time by clearing the
-        Application's data or uninstalling it.
+        Data stored on your device. Files created by the Application are stored
+        in its private app storage and are not transmitted to the Service
+        Provider. You can delete them in the Application, by clearing its data,
+        or by uninstalling it. The Application disables Android Auto Backup, so
+        no copy is made to Google Drive or another device.
       </li>
       <li>
-        Crash and diagnostic data (Firebase Crashlytics). This is collected
-        and retained by Google as the Service Provider's processor and is
-        automatically deleted after a limited period (currently 90 days). The
-        Service Provider cannot selectively delete individual crash records;
-        you may contact Google in accordance with its privacy policy.
+        When crash reporting is enabled, crash and diagnostic data (Firebase
+        Crashlytics) is collected and retained by Google as the Service
+        Provider's processor and is automatically deleted after a limited
+        period (currently 90 days). The Service Provider cannot selectively
+        delete individual crash records; you may contact Google in accordance
+        with its privacy policy. You can turn crash reporting off on the privacy screen or in <strong>Settings → Privacy</strong>.
+      </li>
+      <li>
+        When usage analytics is enabled, analytics data (Firebase Analytics) is
+        collected and retained by Google as the Service Provider's processor
+        for 2 months. The Service Provider cannot selectively delete individual
+        analytics events; you can disable usage analytics on the privacy screen
+        or in <strong>Settings → Privacy</strong>.
       </li>
       <li>
         Advertising data (AdMob). AdMob is operated by Google as an
@@ -616,7 +729,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Read the privacy policy for the the APKM app.",
+      content: "Read the privacy policy for the APKM app.",
     },
     {
       property: "og:title",
@@ -624,7 +737,7 @@ useHead({
     },
     {
       property: "og:description",
-      content: "Read the privacy policy for the the APKM app.",
+      content: "Read the privacy policy for the APKM app.",
     },
     { property: "og:type", content: "website" },
     {

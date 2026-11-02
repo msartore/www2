@@ -30,6 +30,15 @@
   color: var(--mute);
 }
 
+/* the hero CTA pair: project pages written by hand use .cta, the ones built on
+   ProjectPage use .btn-row — same rhythm, so the buttons never touch */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
 .hints li::before {
   content: "";
   display: inline-block;
