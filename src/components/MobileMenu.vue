@@ -108,6 +108,7 @@ function go(path) {
 let previousOverflow = "";
 
 function lock(on) {
+  if (typeof document === "undefined") return;
   if (on) {
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -154,10 +155,14 @@ watch(
   { immediate: true }
 );
 
-document.addEventListener("keydown", onKeydown);
+if (typeof document !== "undefined") {
+  document.addEventListener("keydown", onKeydown);
+}
 onUnmounted(() => {
-  document.removeEventListener("keydown", onKeydown);
-  lock(false);
+  if (typeof document !== "undefined") {
+    document.removeEventListener("keydown", onKeydown);
+    lock(false);
+  }
 });
 </script>
 

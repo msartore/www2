@@ -18,6 +18,12 @@ const pathSrc = path.resolve(import.meta.dirname, "src");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  ssr: {
+    noExternal: ["element-plus"],
+  },
+  ssgOptions: {
+    dirStyle: "nested",
+  },
   resolve: {
     alias: {
       "~/": `${pathSrc}/`,

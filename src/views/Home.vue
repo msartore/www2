@@ -156,7 +156,12 @@ const props = defineProps({
   isMobile: Boolean,
 });
 
-const projectCards = ref([]);
+const projectCards = ref(
+  (props.projects ?? []).map((project) => ({
+    ...project,
+    tagline: taglines[project.label] ?? "Open source",
+  }))
+);
 
 let messageIndex = 0;
 let phase = "holding";
@@ -254,11 +259,6 @@ const ew_list = [
 ];
 
 onMounted(() => {
-  projectCards.value = (props.projects ?? []).map((project) => ({
-    ...project,
-    tagline: taglines[project.label] ?? "Open source",
-  }));
-
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduced) {
     message.value = "open to collaborations";

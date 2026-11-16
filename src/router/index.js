@@ -1,5 +1,3 @@
-import { createRouter, createWebHistory } from "vue-router";
-
 import Home from "../views/Home.vue";
 import Contact from "../views/Contact.vue";
 import Donate from "../views/Donate.vue";
@@ -19,7 +17,7 @@ import ApkmTerms from "../views/projects/terms/Apkm.vue";
 import UGAudioPrivacy from "../views/projects/privacy/UGAudio.vue";
 import UGAudioTerms from "../views/projects/terms/UGAudio.vue";
 
-const routes = [
+export const routes = [
   { path: "/", component: Home },
   { path: "/contact", component: Contact },
   { path: "/projects/ata-gui", component: Atagui },
@@ -42,10 +40,3 @@ const routes = [
     component: NotFound,
   },
 ];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
-
-export default router;

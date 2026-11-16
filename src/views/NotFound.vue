@@ -13,6 +13,12 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { useHead } from "@unhead/vue";
+
+useHead({
+  title: "Page not found — msartore.dev",
+  meta: [{ name: "robots", content: "noindex, nofollow" }],
+});
 
 const router = useRouter();
 

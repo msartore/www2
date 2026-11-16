@@ -63,7 +63,7 @@ import MobileMenu from "~/components/MobileMenu.vue";
 import { isDark, toggleDark } from "~/composables";
 
 const year = new Date().getFullYear();
-const windowWidth = ref(window.innerWidth);
+const windowWidth = ref(typeof window === "undefined" ? 1024 : window.innerWidth);
 const onWidthChange = () => {
   windowWidth.value = window.innerWidth;
   // a drawer left open while the window grows would sit over the desktop layout
