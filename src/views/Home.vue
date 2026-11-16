@@ -112,8 +112,6 @@
       </ol>
     </section>
 
-    <div class="divider"></div>
-
     <section class="closing">
       <div>
         <h2>Open to interesting problems.</h2>
